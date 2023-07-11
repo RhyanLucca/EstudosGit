@@ -27,6 +27,10 @@ git branch -M "main"/ renomeia a branch principal para o nome definido
 
   /Adiciona uma conexão remota do repositório com o github pelo link
 
-git push -u origin main
+git push -u origin main/ Primeira vez que você cria o repositorio
+
+git push origin main / pós o primeiro uso não tem mais necessidade de usar o "-U"
+
+
 
 AQUI TEMOS UMA ALTERAÇÃO PARA TESTE DE VERSIONAMENTO
