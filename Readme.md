@@ -57,3 +57,19 @@ git merge "novo-botao" / Conceta as duas branchs em uma só
 
 
 AQUI TEMOS UMA ALTERAÇÃO PARA TESTE DE VERSIONAMENTO
+
+---------------------------------------------------------------------------------------
+Acessar o github de outra pessoa ou de outro computador
+
+criar uma paste e uisar o comnado GIT CLONE com o link do repositorio / ps: o repositorio tem que ser publico
+
+---------------------------------------------------------------------------------------
+Atualizar o arquivo baseado em alterações realizadas em outro pc
+
+git pull / realizar o git pull dentro da pasta trará as alterações dos repositorios
+
+---------------------------------------------------------------------------------------
+GIT FORK CONECTA UM REPOSITORIO NO SEU REPOSITORIO GITHUB
+
+---------------------------------------------------------------------------------------
+PULL REQUEST SOLICITA O DONO DE UM PROJETO A FAZER UMA ALTERAÇÃO NO SEU ARQUIVO  
