@@ -39,8 +39,10 @@ Criação de uma nova branch
 
 git checkout -b "novo-botão" / Cria uma branch nova para alteração
 
+git add .
 
+git commit - m "Titulo do commit"
 
-
+git push origin "Nome da branch" EX:Novo botao 
 
 AQUI TEMOS UMA ALTERAÇÃO PARA TESTE DE VERSIONAMENTO
