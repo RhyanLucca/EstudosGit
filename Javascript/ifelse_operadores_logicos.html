@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    
+    <script>
+
+        
+       
+        var nota = prompt("Digite a nota do aluno")
+        var faltas = prompt("Digite a quantidade de faltas: ")
+
+        var media = 7
+        var faltas_maximas = 15
+
+
+        if(nota >= media && faltas <= faltas_maximas) {
+            document.write("Aprovado" + "<br/>")
+            //lógica
+        }   else{
+            document.write("Reprovado" + "<br/>")
+            //Lógica
+        }
+
+
+        /*
+
+        // E(&&) - Verdadeiro se todas as expressões forem verdadeiras
+        //OU(||) - Verdadeiro se uma expressão for verdadeira
+        //Negação (!) - Inverte o resultado da expressão de comparação
+
+
+
+        //True     ||   True ||  False
+        if (2 == 2 && 3 >= 1 && "a" == "b"){ //com o metodo E(&&) todas as condições tem que ser verdadeiras
+            document.write("Verdadeiro"+ "<br/>")
+        } else {
+            document.write("Falso" + "<br/>")
+        }
+
+        //True     ||   True ||  False
+        if (2 == 2 || 3 >= 1 || "a" == "b"){ //com o metodo OU(||) retorna verdadeiro se houver ao menos uma operação verdadeira
+            document.write("Verdadeiro" + "<br/>")
+        } else {
+            document.write("Falso" + "<br/>")
+        }
+
+        //True  / False
+        if (!(2 == 3)){ //com o metodo Negação(!) Inverte o resultado da operação, transformando True em False e vice-versa
+            document.write("Verdadeiro" + "<br/>")
+        } else {
+            document.write("Falso" + "<br/>")
+        }
+
+
+        */
+
+        // Operador ternario 
+        var resultado = (nota >= media && faltas <= faltas_maximas) ?  "Aprovado" : "Reprovado"  //<condicao> ? <verdadeiro> : <falso>
+        document.write(resultado)
+
+
+    </script>
+
+
+<body>
+    
+
+</body>
+
+</html>
