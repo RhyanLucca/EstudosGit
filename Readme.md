@@ -45,4 +45,15 @@ git commit - m "Titulo do commit"
 
 git push origin "Nome da branch" EX:Novo botao 
 
+---------------------------------------------------------------------------------------
+navegação entre branchs
+
+git checkout "Nome da branch" / entra na branch que voce quer acessar
+
+---------------------------------------------------------------------------------------
+Juntar as branchs em uma só
+
+git merge "novo-botao" / Conceta as duas branchs em uma só
+
+
 AQUI TEMOS UMA ALTERAÇÃO PARA TESTE DE VERSIONAMENTO
