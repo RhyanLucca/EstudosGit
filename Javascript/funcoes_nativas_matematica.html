@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    
+    <script>
+
+        var x = 10.580
+
+        arredondaUp = Math.ceil(x) //Aredonda pra cima independente da fração
+        document.write(arredondaUp)
+        
+        breakRow()
+        
+        arredondaDw = Math.floor(x) //Aredonda pra baixo independente da fração
+        document.write(arredondaDw) 
+        
+        breakRow()
+        
+        arredondaRound = Math.round(x) //Aredonda levando em consideração o peso da fração
+        document.write(arredondaRound) 
+
+        breakRow()
+
+        arredondaRandom = Math.random(x) //Retorna um valor aleatório entra 0 e 1
+        document.write(arredondaRandom)
+
+        function breakRow(){
+            document.write("<br/>")
+        }
+
+    </script>
+        
+<body>
+    
+
+</body>
+
+</html>
