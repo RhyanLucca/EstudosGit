@@ -17,6 +17,7 @@
     function verificarIdade(){
         if (idade < 18){
             mensagemIdade("Voce não pode cadastrar o seu CPF", "Você ainda é menor de idade")
+            volteLogo()
         } else{
             mensagemIdade("Cadastro de CPF realizado", "Seu número  de CPF foi cadastrado")
             imprimirMensagem()
@@ -27,7 +28,7 @@
         document.write("<h1>" + titulo + "</h1>")
         document.write("<hr/>")
         document.write("<p>" + mensagem + "</p>")
-        document.write("<br/>")
+        //document.write("<br/>")
     }
 
     function converterNumerico(){
@@ -45,6 +46,18 @@
         converterNumerico()
         verificarIdade()
         //imprimirMensagem()
+    }
+
+    function volteLogo(resposta){
+        idadeMin = 18
+        resposta = parseInt(idade)
+        
+
+        volteEm = idadeMin - resposta
+
+        console.log("O resultado da subtração é " + volteEm)
+
+        document.write("Você ainda não pode cadastrar seu CPF como um cliente. <br/> Volte em " + volteEm + " anos...")
     }
 
     iniciarPrograma()
