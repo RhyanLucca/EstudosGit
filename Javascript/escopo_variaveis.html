@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    
+    <script>
+     
+            //3 escopós: global, função, bloco
+
+
+            //Escopo global, escopo do script todo
+
+            var serie = "Friends"
+
+
+            //Escopo de bloco, Instruções contidas dentro de comandos, como if e switch
+            if (true){
+                var serie2 = "Game of trhones" //Variavel definida dentro do escopo de bloco, sofre elevação se for solicitada pelo escopo global. obs: se for criado um bloco dentro de uma função, não será possivel acessar as variaveis dele pelo global, apenas pela função
+                document.write(serie)
+            }
+
+            document.write("<br/>")
+
+            document.write(serie2) //Elevação da variavel (hoisting)
+
+            document.write("<br/>")
+
+            //Escopo de função, corresponde ao conteudo dentrio de um bloco de função (Escopos de função e bloco tem acesso a variaveis do escopo global)
+            function x(){
+                document.write(serie)
+                document.write(serie2) //Elevação da variavel (hoisting)
+                var serie3 = "The walking dead" //O escopo da função não sofre hoisintg, e apenas pode acessar variaveis globais e de bloco, mas, suas variaveis não podem ser acessadas
+            }
+
+            x()
+
+            document.write(serie3)
+
+            //Os escopos globais e escopo da função são separados, tudo que for feito na função ficará preso na função, enquanto o que ficar no escopo global poderá ser acessado de todos os lados
+
+
+
+
+    </script>
+
+
+<body>
+    
+
+</body>
+
+</html>

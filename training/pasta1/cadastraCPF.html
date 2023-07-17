@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    
+    <script>
+     
+//Programa para cadastrar cpf de clientes maiores de idade
+
+    var idade = prompt("Informe sua idade: ")
+    var cpf = prompt("Informe seu cpf: ")
+
+
+    function verificarIdade(){
+        if (idade < 18){
+            mensagemIdade("Voce não pode cadastrar o seu CPF", "Você ainda é menor de idade")
+        } else{
+            mensagemIdade("Cadastro de CPF realizado", "Seu número  de CPF foi cadastrado")
+            imprimirMensagem()
+        }
+    }
+
+    mensagemIdade = function(titulo, mensagem){
+        document.write("<h1>" + titulo + "</h1>")
+        document.write("<hr/>")
+        document.write("<p>" + mensagem + "</p>")
+        document.write("<br/>")
+    }
+
+    function converterNumerico(){
+        //console.log(cpf)
+        numerico = parseInt(cpf)
+        console.log(typeof numerico) 
+    }
+
+    var imprimirMensagem = function(){
+        document.write("CPF cadastrado: " + cpf)
+    }
+
+    function iniciarPrograma(){
+        console.log(cpf)
+        converterNumerico()
+        verificarIdade()
+        //imprimirMensagem()
+    }
+
+    iniciarPrograma()
+
+    </script>
+
+
+<body>
+    
+
+</body>
+
+</html>
