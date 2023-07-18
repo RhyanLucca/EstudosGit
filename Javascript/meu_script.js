@@ -7,7 +7,7 @@ que varias linhas sejam encapsuladas
 em um mesmo comentário
  */
 
-//alert("Olá seja bem vindo ao curso!")
+alert("Olá seja bem vindo ao curso!")
 
 
 /* 

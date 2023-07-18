@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+
+
+<body>
+    
+    <input type="text" 
+    placeholder="Digite seu nome"
+    id="nome_usuario"
+    class="campo_texto"
+    name="nome">
+
+</body>
+
+</html>
+
+<script>
+     
+    //getElementById() seleciona o elemento html a partir da identificação ID
+    console.log(document.getElementById('nome_usuario'))
+
+
+    //getElementsByTagName() Seleciona todos os elementos com a mesma tag
+    console.log(document.getElementsByTagName('input'))
+
+    //getElementsByClassName() Seleciona todos os elementos com a mesma classe
+    console.log(document.getElementsByClassName('campo_texto'))
+
+    //getElementsByName() Seleciona todos os elementos com o mesmo nome, o que se torna um problema na ciração de checkbox
+
+    console.log(document.getElementsByName('nome'))
+
+</script>

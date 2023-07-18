@@ -11,13 +11,25 @@
         //onkeydown: acidonado no momento em que uma tecla é pressionada
         //onkeypress: acionado entre os dois eventos (No instante em que é mantida a tecla pressionada) somente é acionado quando a tecla pressionada representa um caracter. EX: se for pressionado ctrl, o evento onkeypress não vai acontecer.
         //onkeyup: Acionado no momento em que a tecla é liberada
+
+        function acao1(){
+            alert("Ação 1 on key down") //O evento é disparado no exato momento que a tecla é pressionada, muito usado para criar mascaras
+        }
+
+        function acao2(){
+            alert("Ação 2 on key up") //O Evento só é disparado quando a tecla pressionada sobe
+        }
+
+        function acao3(){
+            alert("Ação 3 on key press") //O Evento é disparado quando a tecla está entre onkeydown e onkeypress
+        }
      
     </script>
 
 
 <body>
     
-    <div onclick="acao1()" onmouseout="acao2()" style="background: #ccc; height: 150px; width: 150px;"></div>
+    <input onkeydown="acao3()" type="text" />
 
 </body>
 
