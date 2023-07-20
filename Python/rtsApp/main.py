@@ -4,7 +4,7 @@ from PIL import Image
 from tkinter import messagebox
 
 app = ctk.CTk()
-
+aplication = ctk.CTk()
 
 class Login():
 
@@ -22,7 +22,7 @@ class Login():
 
 
     def tela(self):
-        app.title("CTK TESTE")
+        app.title("RTS Systems")
         app.geometry("700x450")
         #app.iconbitmap("apps\Tkinter\planejamento.ico")
         app.resizable(False, False)
@@ -58,10 +58,9 @@ class Login():
             #msg = messagebox.showinfo(title="Cadastro realizado", message="Seu usuário foi cadastrado com sucesso!")
             #self.app.destroy()
             self.label_img = ctk.CTkLabel(master=self.app, text='', bg_color="transparent").place(relx=10.0, rely=10.0)
-            login_frame.pack_forget()
-            #self.label_img.
+            #login_frame.pack_forget()
             Aplication()
-            
+            #self.app.quit()
             
 
         login_button = ctk.CTkButton(master=login_frame, text="Login", width=300, command=login).place(x=25, y=270)
@@ -116,7 +115,7 @@ class Login():
 class Aplication():
 
     def __init__(self) -> None:
-        self.app = app
+        self.app = aplication
         self.window_style()
         #self.frame_login()
 

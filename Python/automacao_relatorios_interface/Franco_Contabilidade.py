@@ -88,31 +88,34 @@ class Aplication():
 
             if valorIntranetTributacao == "on":
                 nome = "Intranet Tributação"
+                print(f"Relatório {nome} atualizado")
                 lista.append(nome)
-                atualizaTributacao()
+                #atualizaTributacao()
                 checkvarIntranetTributacao.set("off")
             else:pass
             
             if valorIntranetEmpresas =="on":
                 nome = "Intranet Empresas"
+                print(f"Relatório {nome} atualizado")
                 lista.append(nome)
-                atualizarEmpresas()
+                #atualizarEmpresas()
                 checkvarIntranetEmpresas.set("off")
 
             else: pass
 
             if valorIntranetResponsaveis =="on":
                 nome = "Intranet Responsaveis"
+                print(f"Relatório {nome} atualizado")
                 lista.append(nome)
-                atualizarResponsaveis()
+                #atualizarResponsaveis()
                 checkvarIntranetResponsaveis.set("off")
             else: pass
 
             if valorIntranetWorkFlow =="on":
                 nome = "Intranet WorkFlow"
                 lista.append(nome)
-                print("Workflow atualizado")
-                atualizarWorkFlow()
+                print(f"Relatório {nome} atualizado")
+                #atualizarWorkFlow()
                 checkvarIntranetWorkFlow.set("off")
             else: pass
 
@@ -207,7 +210,8 @@ class Aplication():
             if valorIntranetDesligamentos == "on":
                 nome = "Intranet Desligamentos"
                 lista.append(nome)
-                atualizarDesligamentos()
+                print(f"Relatório {nome} atualizado")
+                #atualizarDesligamentos()
                 checkvarIntranetDesligamentos.set("off")
             else:pass
 
@@ -275,29 +279,33 @@ class Aplication():
 
             if valorIntranetSuporte == "on":
                 nome = "Intranet_Suporte TI"
+                print(f"Relatório {nome} atualizado")
                 lista.append(nome)
-                atualizarSuporteInfra()
+                #atualizarSuporteInfra()
                 checkvarIntranetSuporte.set("off")
             else:pass
 
             if valorIntranetDescarte == "on":
                 nome = "Intranet-Descarte"
+                print(f"Relatório {nome} atualizado")
                 lista.append(nome)
-                atualizarDescarte()
+                #atualizarDescarte()
                 checkvarIntranetDescarte.set("off")
             else:pass
 
             if valorIntranetMaquinas == "on":
                 nome = "Intranet-Maquinas"
+                print(f"Relatório {nome} atualizado")
                 lista.append(nome)
-                atualizarMaquinas()
+                #atualizarMaquinas()
                 checkvarIntranetMaquinas.set("off")
             else:pass
 
             if valorIntranetServidores == "on":
                 nome = "Intranet-Servidores"
                 lista.append(nome)
-                atualizarServidores()
+                print(f"Relatório {nome} atualizado")
+                #atualizarServidores()
                 checkvarIntranetServidores.set("off")
             else:pass
 
@@ -380,7 +388,8 @@ class Aplication():
             if valorIntranetObrigacoes == "on":
                 nome = "Consulta Obrigações"
                 lista.append(nome)
-                atualizarObrigacoes()
+                print(f"Relatório {nome} atualizado")
+                #atualizarObrigacoes()
                 checkvarIntranetObrigacoes.set("off")
             else:pass
 
@@ -445,7 +454,8 @@ class Aplication():
             if valorIntranetTimeSheet == "on":
                 nome = "Intranet TimeSheet"
                 lista.append(nome)
-                atualizarTimeSheet()
+                print(f"Relatório {nome} atualizado")
+                #atualizarTimeSheet()
                 checkvarIntranetTimeSheet.set("off")
             else:pass
 

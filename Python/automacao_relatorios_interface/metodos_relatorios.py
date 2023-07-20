@@ -3,7 +3,7 @@ import mysql.connector
 from datetime import datetime, date
 
 
-db_dados = ["bi_user", "B1x#fr4nc0$", "intranet", "intranetdb"]
+db_dados = []
 
 
 teste = True
