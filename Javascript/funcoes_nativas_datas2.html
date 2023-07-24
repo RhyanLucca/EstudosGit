@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    
+    <script>
+
+        var data = new Date() //Solicita a data atual do sistema operacional
+
+
+        //Adicionar / remover dias
+        document.write(data.toString()) //Escreve a data por extenso
+
+        document.write("<hr/>")
+
+        data.setDate(data.getDate() + 720) //SetDate consegue setar uma nova data para a data em questão seja mais ou menos
+        document.write(data.toString())
+
+
+
+        //Adicionar / remover meses
+        document.write("<hr/><br/><hr/>")
+    
+        document.write(data.toString()) //Escreve a data por extenso
+
+        document.write("<hr/>")
+
+        data.setDate(data.getMonth() + 3) //SetDate consegue setar uma nova data para a data em questão seja mais ou menos
+        document.write(data.toString())
+
+
+        //Adicionar / remover anos
+        document.write("<hr/><br/><hr/>")
+    
+        document.write(data.toString()) //Escreve a data por extenso
+
+        document.write("<hr/>")
+
+        data.setDate(data.getFullYear() + 7) //SetDate consegue setar uma nova data para a data em questão seja mais ou menos
+        document.write(data.toString())
+
+        document.write("<hr/><br/><hr/>")
+        //15/01/2017
+
+        var data1 = new Date(2017, 0, 15) //14 de janeiro de 2017
+
+        //hoje
+    
+        var data2 = new Date(2023, 6, 17) //dia atual
+
+        document.write(data1.toString())
+        document.write("<hr/>")
+        document.write(data2.toString())
+        
+        document.write("<hr/><br/><hr/>")
+
+        //Converter datas para algo que possamos calcular
+        
+        document.write(data1.getTime()) //Trás a quantidade de milissegundos de 1de janeiro de 1970 até a data em questão
+        document.write("<hr/>")
+        document.write(data2.getTime()) //Trás a quantidade de milissegundos de 1de janeiro de 1970 até a data em questão
+        document.write("<hr/>")
+        
+        
+        //Encntrar a qtde de milissegundos entre data1 e data2
+        //document.write(Math.abs(data1.getTime() - data2.getTime()))
+        var milisegundos_entre_datas = Math.abs(data1.getTime() - data2.getTime())
+        document.write("A difença entre as datas é: " + milisegundos_entre_datas + " de Milissegundos")
+
+        document.write("<hr/>")
+        //1 dia tem 24 hrs, cada hora tem 60 minutos, cada minuto tem 60 segundos e cada segundo tem 100 milissegundos
+        //Então quantos milissegundos existem em 1 dia?
+
+        var milisegundos_por_dia = 1*24*60*60*1000
+
+        document.write("1 dia tem: " + milisegundos_por_dia + " Milissegundos")
+
+        document.write("<br/>")
+
+        document.write("A diferença entre as datas é de: " + Math.round(milisegundos_entre_datas / milisegundos_por_dia) + " dias.")
+
+
+        document.write("<hr/>")
+
+
+
+    </script>
+        
+<body>
+    
+
+</body>
+
+</html>

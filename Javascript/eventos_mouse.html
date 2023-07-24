@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    
+    <script>
+     
+    //onclick: acionado quando o elemento é clicado
+    //ondblclick: acionado quando o elemento é clicado duas vezes
+    //onmouseup: acionado quando o click sobre um determinado elemento é liberado
+    //onmouseover: adcionado quando o cursor do mouse sobrepõe o elemento
+    //onmouseout: acionado quando o cursor do mouse sai da região da pagina ocupada pelo elemento
+     
+    function acao1(){
+        alert("Elemento foi clickado")
+    }
+
+    function acao2(){
+        alert("O cursor do mouse deixou a região do elemento")
+    }
+
+    </script>
+
+
+<body>
+    
+    <div onclick="acao1()" onmouseout="acao2()" style="background: #ccc; height: 150px; width: 150px;"></div>
+
+</body>
+
+</html>

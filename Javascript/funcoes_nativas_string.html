@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    
+    <script>
+        
+        //propriedade length: retorna o tamanho da string
+        
+        breakRow = function(){
+            document.write("<br/>")
+        }
+
+        document.write("Jorge Sant Ana".length) //Retorna lenght da string
+        breakRow()
+        document.write("Jorge Sant Ana".charAt(11)) //Retorna o caracter que estiver na posição selecionada
+        breakRow()
+        document.write("Jorge Sant Ana".indexOf('A')) //Retorna a primeira ocorrencia de um valor especificodentro da string
+        breakRow()
+        document.write("Jorge Sant Ana".replace("Sant Ana", "Silva"))//Substitui uma string selecionada, e altera para uma string especificada
+        breakRow()
+        document.write("Jorge Sant Ana".substr(0, 4)) //Permite extrair parte de uma string com base em uma posição inicial seguida de um valor que representa a quantidade de caracteres a partir dessa posição inicial 
+        breakRow()
+        document.write("Jorge Sant Ana".toLowerCase()) //Transforma string em caixa baixa
+        breakRow()
+        document.write("Jorge Sant Ana".toUpperCase()) //TRANSFORMA STRING EM CAIXA ALTA)
+        breakRow()
+        var nome ="  Jorge Sant Ana  "
+        document.write(nome) 
+        breakRow()       
+        document.write("-" + nome + "-") //Remove os espaços em branco das extremidades de uma string
+        breakRow()
+        document.write("-" + nome.trim() + "-" + "  Metodo Trim inserido") //Remove os espaços em branco das extremidades de uma string
+    </script>
+        
+<body>
+    
+
+</body>
+
+</html>

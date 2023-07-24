@@ -1,0 +1,9 @@
+  #menu_principal ul {
+    display: flex;
+  }
+  
+  #menu_principal ul li {
+    list-style-type: none;
+      padding-right: 14px;
+  }
+  
