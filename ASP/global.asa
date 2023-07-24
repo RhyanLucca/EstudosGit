@@ -1,0 +1,5 @@
+<script language="vbscript" runat="server">
+sub Session_onStart
+    Session("inicio") = Now()
+end sub
+</script>
