@@ -7,7 +7,7 @@
 
         response.cookies("usuario") = usuario
 
-        response.cookies("usuario").expires=#july 25, 2023#
+        <!-- response.cookies("usuario").expires=#july 25, 2023# -->
 
         mensagem ="Usuario " & usuario & " conectado"
 
