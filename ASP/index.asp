@@ -47,7 +47,7 @@
 
     <p>Para sabermos seu nome digite na aba de cookies</p>
     <%
-        usuario = Request.cookies("usuario")
+        usuario = request.cookies("usuario")
 
         response.write("O usuario conectado é: " & usuario & "<br>Sessão iniciada às: " & session("entrada"))
     %>
