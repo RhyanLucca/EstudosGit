@@ -1,3 +1,4 @@
+<!--#include virtual=/includes/conexao.asp-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,26 +10,31 @@
     <link rel="stylesheet" href="../style.css">
 
     <style>
-    h1{
-        align-self: center;
+
+    .tittle{
+        text-align: center;
+    }
+
+    .container{
+
+        /* width: 100px;   */
+        padding: 1rem; 
+        border-radius: 1rem;
+    }
+
+    table tr, td{
+        border: 1px solid black; 
+        width: 700px;  
+        padding: 2rem; 
+        border-radius: 1rem;
     }
 
     .btn-cadastrar{
+        align-items: center;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .table_crud{
-        border: 1px solid black;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .table_crud td, .table_crud tr, .table_crud th{
-        border: 1px solid black;
-        padding: 10px 30px 10px 30px;
-        text-align: center;
-    }
     </style>
 
 </head>
@@ -36,30 +42,42 @@
     
     <!--#include file="nav_crud.asp"-->
 
-      <br>
-      <h1>Cadastros</h1>
-      <br><br>
+    <br>
+        <div class="tittle">
+            <h1>Cadastros</h1>
+        </div>
+    <br>
 
-    <a href="cadastrar_crud.asp"><input id="btn-cadastrar" class="btn-cadastrar" type="submit" value="Cadastrar" action="cadastrar_crud.asp"></a>
+    <!-- <a href="cadastrar_crud.asp"><input id="btn-cadastrar" class="btn-cadastrar" type="submit" value="Cadastrar" action="cadastrar_crud.asp"></a> -->
 
-    <div class="table_div">
+    <div class="container">
         
-        <table class="table_crud">
+        <a href="cadastrar_crud.asp"><button type="button" class="btn btn-primary">Cadastrar</button></a>
 
+        <br><br>
+
+        <table class="table">
             <thead>
                 <th>ID</th>
                 <th>Nome</th>
                 <th>E-mail</th>
+                <th>Status</th>
+                <th>Permissões</th>
                 <th>Ação</th>
             </thead>
             <tr class="table_crud_row">
                 <td>1</td>
                 <td>Rhyan</td>
                 <td>brhyanlucca@gmail.com</td>
-                <td><a href="edita_crud.asp">Editar</a>  <a href="">Excluir</a></td>
+                <td>Ativo</td>
+                <td>Administrador</td>
+                <td>
+                    <button type="button" class="btn btn-primary" id="btn-editar" name="btn-editar">Editar</button>  
+                    <button type="button" class="btn btn-primary" id="btn-excluir" name="btn-excluir">Excluir</button>
+                </td>
             </tr>
+          </table>
 
-        </table>
     </div>
 </body>
 </html>

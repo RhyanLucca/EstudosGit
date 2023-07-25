@@ -11,5 +11,5 @@
 <body>
     
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="index_crud.asp">ASP CRUD</a>
+        <a class="navbar-brand" href="index_crud.asp" style="margin-left: 2%;">ASP CRUD</a>
       </nav>
