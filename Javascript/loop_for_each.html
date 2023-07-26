@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+    //foreach é uma função pertencente ao objeto array(), que assim como for in percorre cada um dos elementos em um array que só entende valores numericos como indice
+    
+        // var listaFuncionarios = ["Rhyan", "Lucca", "Borges", "Galdino", "Isabella"]
+        var listaFuncionarios = []
+        listaFuncionarios["x"]= "Rhyan"
+        listaFuncionarios["1"]= "Lucca"
+        listaFuncionarios[2]= "Borges"
+        listaFuncionarios[3]= "Galdino"
+        listaFuncionarios[7]= "Isabella" 
+        listaFuncionarios[5]= "Martins"
+
+        //utilizando a tecnica de wrapper
+        var f = function(valor, indice){ //Tras primeiro o valor e após isso o indice
+            console.log(indice, valor) 
+        }
+
+        listaFuncionarios.forEach(f)
+        // listacoisas.forEach(f)
+
+        
+
+        // console.log(listaFuncionarios)
+        // document.write(listaFuncionarios[1]+ "<br>")
+
+        // listaFuncionarios.forEach(function(valor, indice, array){//aguarda uma função de callback esperando o valor, o indice e o proprio array
+        //     //logica
+        //     console.log(indice + " Valor: " + valor)
+
+        //     if(valor == "Lucca"){
+        //         array[indice] = "Bryan"
+        //     }
+            
+        // })
+        // console.log(listaFuncionarios)
+        // document.write(listaFuncionarios[1])
+
+        //particularidades do forEach
+        
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

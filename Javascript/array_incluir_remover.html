@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        var lista_frutas = []
+        lista_frutas[0]= "Banana"
+        lista_frutas[1]= "Maçã"
+        document.write(lista_frutas + "<br>")
+        
+        //incluir elementos no final do array
+        lista_frutas.push("Uva")
+
+        //incluir elementos no início do array
+        lista_frutas.unshift("Laranja")
+        document.write(lista_frutas + "<br>")
+        
+        //Exclusão de elementos no final do array
+        lista_frutas.pop()
+        document.write(lista_frutas + "<br>")
+
+        //Exclusão de elementos no inicio do array
+        lista_frutas.shift() 
+        document.write(lista_frutas + "<br>")
+        
+        console.log(lista_frutas)
+
+        var lista_coisas = Array()
+
+        lista_coisas["frutas"] = []
+
+        lista_coisas["frutas"].push(lista_frutas) //Acrescenta o Array inteiro em um unico indice como um elemento unico, porem dividido entre si
+        lista_coisas["frutas"].push("Laranja")
+        lista_coisas["frutas"].unshift("Uva")
+        document.write(lista_coisas["frutas"])
+
+        console.log(lista_coisas)
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
