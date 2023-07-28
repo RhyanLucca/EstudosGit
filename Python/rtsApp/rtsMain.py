@@ -66,8 +66,8 @@ class Aplication():
     def frame_menu_lateral(self):
             
             def abre_estoque():
-                pass
-            
+                self.frame_estoque
+
 
             scr_width = self.scr_width
             scr_height = self.scr_height
@@ -75,7 +75,7 @@ class Aplication():
             #self.frameMenuLateral.pack(fill="y", side="left", expand=True)
             ctk.CTkLabel(master=self.frameMenuLateral, text="RTS Systems", font=(f"{self.font}", scr_width/30)).place(relx=0.01, rely=0.05)
 
-            self.btnEstoque = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Estoque", command='', font=(f"{self.font}", scr_width/40)).place(relx=0.01, rely=0.3)
+            self.btnEstoque = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Estoque", command=abre_estoque, font=(f"{self.font}", scr_width/40)).place(relx=0.01, rely=0.3)
             self.btnVendas = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Vendas", font=(f"{self.font}", scr_width/40)).place(relx=0.01, rely=0.6)
             self.btnAnalise = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Análise", font=(f"{self.font}", scr_width/40)).place(relx=0.01, rely=0.9)
 
