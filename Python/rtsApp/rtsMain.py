@@ -77,12 +77,27 @@ class Aplication():
 
     def frame_inicial(self): 
 
-
         def estoque_frame():
             self.frameInicial.pack_forget()
             self.frameMenuLateral.place_forget()
             #self.frameEstoque.pack(fill='both', side="right", expand=True)
             self.frame_estoque()
+            btn_abreMenu = ctk.CTkButton(master=self.frameEstoque, text="Menu", width=self.scr_width/50, font=(f"{self.font}", self.scr_width/70))
+            btn_abreMenu.place(relx=0.01, rely=0.01)
+
+        def vendas_frame():
+            self.frameInicial.pack_forget()
+            self.frameMenuLateral.place_forget()
+            #self.frameEstoque.pack(fill='both', side="right", expand=True)
+            self.vendas_frame()
+            btn_abreMenu = ctk.CTkButton(master=self.frameEstoque, text="Menu", width=self.scr_width/50, font=(f"{self.font}", self.scr_width/70))
+            btn_abreMenu.place(relx=0.01, rely=0.01)
+        
+        def analise_frame():
+            self.frameInicial.pack_forget()
+            self.frameMenuLateral.place_forget()
+            #self.frameEstoque.pack(fill='both', side="right", expand=True)
+            self.analise_frame()
             btn_abreMenu = ctk.CTkButton(master=self.frameEstoque, text="Menu", width=self.scr_width/50, font=(f"{self.font}", self.scr_width/70))
             btn_abreMenu.place(relx=0.01, rely=0.01)
 
@@ -100,8 +115,8 @@ class Aplication():
         ctk.CTkLabel(master=self.frameMenuLateral, text="RTS Systems", font=(f"{self.font}", scr_width/30)).place(relx=0.05, rely=0.05)
 
         self.btnEstoque = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Estoque", command=estoque_frame, font=(f"{self.font}", scr_width/40)).place(relx=0.1, rely=0.3)
-        self.btnVendas = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Vendas", font=(f"{self.font}", scr_width/40)).place(relx=0.1, rely=0.6)
-        self.btnAnalise = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Análise", font=(f"{self.font}", scr_width/40)).place(relx=0.1, rely=0.9)
+        self.btnVendas = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Vendas", command=vendas_frame, font=(f"{self.font}", scr_width/40)).place(relx=0.1, rely=0.6)
+        self.btnAnalise = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Análise", command=analise_frame, font=(f"{self.font}", scr_width/40)).place(relx=0.1, rely=0.9)
 
 
     def frame_estoque(self):
@@ -113,6 +128,26 @@ class Aplication():
         self.frameEstoque.pack(fill='both', side="right", expand=True)
         # self.frame_menu_lateral()
         ctk.CTkLabel(master=self.frameEstoque, text="Estoque", font=(f"{self.font}", self.scr_width/30)).place(relx=0.3, rely=0.05)
+
+    def vendas_frame(self):
+        self.currentFrame = "frameEstoque"
+        print(self.currentFrame)
+        if self.currentFrame =="frameEstoque":
+            print('Frame estoque ok')
+        self.frameEstoque = ctk.CTkFrame(master=self.frameGeral, width=self.scr_width, corner_radius=False, border_color="black", border_width=1)#fg_color="pink",
+        self.frameEstoque.pack(fill='both', side="right", expand=True)
+        # self.frame_menu_lateral()
+        ctk.CTkLabel(master=self.frameEstoque, text="Vendas", font=(f"{self.font}", self.scr_width/30)).place(relx=0.3, rely=0.05)
+
+    def analise_frame(self):
+        self.currentFrame = "frameEstoque"
+        print(self.currentFrame)
+        if self.currentFrame =="frameEstoque":
+            print('Frame estoque ok')
+        self.frameEstoque = ctk.CTkFrame(master=self.frameGeral, width=self.scr_width, corner_radius=False, border_color="black", border_width=1)#fg_color="pink",
+        self.frameEstoque.pack(fill='both', side="right", expand=True)
+        # self.frame_menu_lateral()
+        ctk.CTkLabel(master=self.frameEstoque, text="Analise", font=(f"{self.font}", self.scr_width/30)).place(relx=0.3, rely=0.05)
 
         
 
