@@ -82,7 +82,7 @@ class Aplication():
             self.frameMenuLateral.place_forget()
             #self.frameEstoque.pack(fill='both', side="right", expand=True)
             self.frame_estoque()
-            btn_abreMenu = ctk.CTkButton(master=self.frameEstoque, text="Menu", width=self.scr_width/50, font=(f"{self.font}", self.scr_width/70))
+            btn_abreMenu = ctk.CTkButton(master=self.frameEstoque, text="Voltar", width=self.scr_width/50, font=(f"{self.font}", self.scr_width/70))
             btn_abreMenu.place(relx=0.01, rely=0.01)
 
         def vendas_frame():
@@ -90,7 +90,7 @@ class Aplication():
             self.frameMenuLateral.place_forget()
             #self.frameEstoque.pack(fill='both', side="right", expand=True)
             self.vendas_frame()
-            btn_abreMenu = ctk.CTkButton(master=self.frameEstoque, text="Menu", width=self.scr_width/50, font=(f"{self.font}", self.scr_width/70))
+            btn_abreMenu = ctk.CTkButton(master=self.frameEstoque, text="Voltar", width=self.scr_width/50, font=(f"{self.font}", self.scr_width/70))
             btn_abreMenu.place(relx=0.01, rely=0.01)
         
         def analise_frame():
@@ -98,7 +98,7 @@ class Aplication():
             self.frameMenuLateral.place_forget()
             #self.frameEstoque.pack(fill='both', side="right", expand=True)
             self.analise_frame()
-            btn_abreMenu = ctk.CTkButton(master=self.frameEstoque, text="Menu", width=self.scr_width/50, font=(f"{self.font}", self.scr_width/70))
+            btn_abreMenu = ctk.CTkButton(master=self.frameEstoque, text="Voltar", width=self.scr_width/50, font=(f"{self.font}", self.scr_width/70))
             btn_abreMenu.place(relx=0.01, rely=0.01)
 
         self.frameInicial = ctk.CTkFrame(master=self.frameGeral, width=self.scr_width, corner_radius=False, border_color="black", border_width=1)
