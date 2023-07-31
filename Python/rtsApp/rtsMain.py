@@ -88,7 +88,7 @@ class Aplication():
             for row in range(rows):
                 self.frameMenuLateral.grid_rowconfigure(row, weight=1)
 
-            ctk.CTkLabel(master=self.frameMenuLateral, text="RTS", font=(f"{self.font}", self.scr_width/45)).place(relx=0.1, rely=0.05)    
+            ctk.CTkLabel(master=self.frameMenuLateral, text="RTS", font=(f"{self.font}", self.scr_width/41)).place(relx=0.05, rely=0.05)    
 
             self.btnEstoque = ctk.CTkButton(master=self.frameMenuLateral, text='', command=aumenta_menu, image=image_estoque, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=1)#.place(relx=0, rely=0.25)
             self.btnVendas = ctk.CTkButton(master=self.frameMenuLateral, text="", command=aumenta_menu, image=image_cash, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=2)#.place(relx=0, rely=0.45)
@@ -158,18 +158,6 @@ class Aplication():
         self.frameInicial.pack(fill='both', side="right", expand=True)
         self.frame_menu_lateral()
         ctk.CTkLabel(master=self.frameInicial, text="Bem vindo", font=(f"{self.font}", self.scr_width/30)).place(relx=0.3, rely=0.05)
-
-        scr_width = self.scr_width
-        scr_height = self.scr_height
-        # self.frameMenuLateral = ctk.CTkFrame(master=self.frameInicial, width=scr_width/ 4, height=scr_height, border_color="black", border_width=1, corner_radius=False)
-        # self.frameMenuLateral.place(relx=0, rely=0) #, fg_color='yellow')
-        # #self.frameMenuLateral.pack(fill="y", side="left", expand=True)
-
-        # ctk.CTkLabel(master=self.frameMenuLateral, text="RTS Systems", font=(f"{self.font}", scr_width/30)).place(relx=0.05, rely=0.05)
-
-        # self.btnEstoque = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Estoque", command=estoque_frame, font=(f"{self.font}", scr_width/40)).place(relx=0.1, rely=0.3)
-        # self.btnVendas = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Vendas", command=vendas_frame, font=(f"{self.font}", scr_width/40)).place(relx=0.1, rely=0.6)
-        # self.btnAnalise = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Análise", command=analise_frame, font=(f"{self.font}", scr_width/40)).place(relx=0.1, rely=0.9)
 
 
     def frame_estoque(self):
