@@ -75,58 +75,58 @@ class Aplication():
 
         btnLogin = ctk.CTkButton(master=frameLogin, text="Entrar", command=sair_da_tela, width=scr_width/2, font=("calibri", scr_width/20)).place(relx=0.1, rely=0.8)
 
+
     def frame_menu_lateral(self):
-
-        def diminui_menu():
-            self.frameMenuLateral.place_forget()
-            frame_widget = self.scr_width/ 18
-            self.frameMenuLateral = ctk.CTkFrame(master=self.frameInicial, width=frame_widget, height=self.scr_height, corner_radius=False)
-            self.frameMenuLateral.place(relx=0, rely=0,relheight=1)
-
-            rows = 6
-            self.frameMenuLateral.grid_columnconfigure(0, weight=1)
-            for row in range(rows):
-                self.frameMenuLateral.grid_rowconfigure(row, weight=1)
-
-            ctk.CTkLabel(master=self.frameMenuLateral, text="RTS", font=(f"{self.font}", self.scr_width/41)).place(relx=0.05, rely=0.05)    
-
-            self.btnEstoque = ctk.CTkButton(master=self.frameMenuLateral, text='', command=aumenta_menu, image=image_estoque, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=1)#.place(relx=0, rely=0.25)
-            self.btnVendas = ctk.CTkButton(master=self.frameMenuLateral, text="", command=aumenta_menu, image=image_cash, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=2)#.place(relx=0, rely=0.45)
-            self.btnAnalise = ctk.CTkButton(master=self.frameMenuLateral, text="", command=aumenta_menu, image=image_anal, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=3)#.place(relx=0, rely=0.65)
-            self.btnConfiguracoes = ctk.CTkButton(master=self.frameMenuLateral, text="", command=aumenta_menu, image=image_config, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=4)
-
-
-        def aumenta_menu():
-            self.frameMenuLateral.place_forget()
-            self.frame_menu_lateral()
-
-
-        frame_widget = self.scr_width/ 4
-        self.frameMenuLateral = ctk.CTkFrame(master=self.frameInicial, width=frame_widget, height=self.scr_height, corner_radius=False)
-        self.frameMenuLateral.place(relx=0, rely=0, relheight=1) #, fg_color='yellow')
-
-    
-        rows = 6
-        self.frameMenuLateral.grid_columnconfigure(0, weight=1)
-        for row in range(rows):
-            self.frameMenuLateral.grid_rowconfigure(row, weight=1)
-
-        ctk.CTkLabel(master=self.frameMenuLateral, text="RTS SYSTEMS", font=(f"{self.font}", self.scr_width/35)).place(relx=0.1, rely=0.05)    
 
         image_heigth= round((self.scr_height/100)*4)
         image_width=round((self.scr_width/100)*4)
-        #print(image_heigth, image_width)
-
-        #image_estoque = PhotoImage(file=r"Python\rtsApp\box_log.png", height=image_heigth, width=image_width)
         image_estoque = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\box_log_light.png"), dark_image=Image.open(r"Python\rtsApp\box_log_dark.png"), size=(image_heigth, image_width))
         image_cash = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\cash_cash_light.png"), dark_image=Image.open(r"Python\rtsApp\cash_cash_dark.png"), size=(image_heigth, image_width))
         image_anal = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\anal_light.png"), dark_image=Image.open(r"Python\rtsApp\anal_dark.png"), size=(image_heigth, image_width))
         image_config = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\config_light.png"), dark_image=Image.open(r"Python\rtsApp\config_dark.png"), size=(image_heigth, image_width))
 
-        self.btnEstoque = ctk.CTkButton(master=self.frameMenuLateral, text=" RTS Estoque", command=diminui_menu, image=image_estoque, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=1)#.place(relx=0, rely=0.25)
-        self.btnVendas = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Vendas", command=diminui_menu, image=image_cash, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=2)#.place(relx=0, rely=0.45)
-        self.btnAnalise = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Análise", command=diminui_menu, image=image_anal, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=3)#.place(relx=0, rely=0.65)
-        self.btnConfiguracoes = ctk.CTkButton(master=self.frameMenuLateral, text="Configurações", command=diminui_menu, image=image_config, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=4)
+        frame_widget_max= self.scr_width/ 4
+        frame_wdiget_min= self.scr_width/ 18
+
+        def diminui_menu():
+            self.frameMenuLateral.place_forget()
+
+
+        def aumenta_menu():
+
+            frame_widget = frame_widget_max
+            self.frameMenuLateral = ctk.CTkFrame(master=self.frameInicial, width=frame_widget, height=self.scr_height, corner_radius=False)
+            self.frameMenuLateral.place(relx=0, rely=0, relheight=1) #, fg_color='yellow')
+        
+            rows = 6
+            self.frameMenuLateral.grid_columnconfigure(0, weight=1)
+            for row in range(rows):
+                self.frameMenuLateral.grid_rowconfigure(row, weight=1)
+
+            ctk.CTkLabel(master=self.frameMenuLateral, text="RTS SYSTEMS", font=(f"{self.font}", self.scr_width/35)).place(relx=0.05, rely=0.05)    
+            
+            self.btnEstoque = ctk.CTkButton(master=self.frameMenuLateral, text=" RTS Estoque", command=diminui_menu, image=image_estoque, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=1, padx=self.scr_width/99)#.place(relx=0, rely=0.25)
+            self.btnVendas = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Vendas", command=diminui_menu, image=image_cash, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=2, padx=self.scr_width/99)#.place(relx=0, rely=0.45)
+            self.btnAnalise = ctk.CTkButton(master=self.frameMenuLateral, text="RTS Análise", command=diminui_menu, image=image_anal, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=3, padx=self.scr_width/99)#.place(relx=0, rely=0.65)
+            self.btnConfiguracoes = ctk.CTkButton(master=self.frameMenuLateral, text="Configurações", command=diminui_menu, image=image_config, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=4, padx=self.scr_width/99)
+
+
+        frame_widget = frame_wdiget_min
+        self.frameMenuLateral = ctk.CTkFrame(master=self.frameInicial, width=frame_widget, height=self.scr_height, corner_radius=False)
+        self.frameMenuLateral.place(relx=0, rely=0,relheight=1)
+
+        rows = 6
+        self.frameMenuLateral.grid_columnconfigure(0, weight=1)
+        for row in range(rows):
+            self.frameMenuLateral.grid_rowconfigure(row, weight=1)
+
+        ctk.CTkLabel(master=self.frameMenuLateral, text="RTS", font=(f"{self.font}", self.scr_width/41)).place(relx=0.1, rely=0.05)    
+
+        self.btnEstoque = ctk.CTkButton(master=self.frameMenuLateral, text='', command=aumenta_menu, image=image_estoque, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=1, padx=self.scr_width/99)#.place(relx=0, rely=0.25)
+        self.btnVendas = ctk.CTkButton(master=self.frameMenuLateral, text="", command=aumenta_menu, image=image_cash, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=2, padx=self.scr_width/99)#.place(relx=0, rely=0.45)
+        self.btnAnalise = ctk.CTkButton(master=self.frameMenuLateral, text="", command=aumenta_menu, image=image_anal, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=3, padx=self.scr_width/99)#.place(relx=0, rely=0.65)
+        self.btnConfiguracoes = ctk.CTkButton(master=self.frameMenuLateral, text="", command=aumenta_menu, image=image_config, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scr_width/40)).grid(column=0, row=4, padx=self.scr_width/99)
+
 
     def frame_inicial(self): 
 
@@ -157,7 +157,7 @@ class Aplication():
         self.frameInicial = ctk.CTkFrame(master=self.frameGeral, width=self.scr_width, corner_radius=False, border_color="black", border_width=1)
         self.frameInicial.pack(fill='both', side="right", expand=True)
         self.frame_menu_lateral()
-        ctk.CTkLabel(master=self.frameInicial, text="Bem vindo", font=(f"{self.font}", self.scr_width/30)).place(relx=0.3, rely=0.05)
+        ctk.CTkLabel(master=self.frameInicial, text="Bem vindo", font=(f"{self.font}", self.scr_width/30)).place(relx=0.1, rely=0.05)
 
 
     def frame_estoque(self):
