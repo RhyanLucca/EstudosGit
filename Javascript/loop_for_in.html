@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // var lista_convidados = Array("Rhyan", "Susana", "Isabella", "Thamires", "Lucca")
+
+        var lista_convidados = Array()
+
+        lista_convidados["a"] = "Rhyan"
+        lista_convidados["10"] = "Susana"
+        lista_convidados["zebra"] = "Thamires"
+        lista_convidados[-1] = "Isabella"
+        lista_convidados[true] = "Lucca"
+
+        for(var x in lista_convidados){ //for in não neccessita obrigatoriamente de um indice numerico e sequencial, mas reconhece os valores dos indices 
+            document.write("Índice: " + x + " Nome: " +lista_convidados[x] + "<br>")
+        }
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
