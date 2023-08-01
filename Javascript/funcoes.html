@@ -34,9 +34,22 @@
         }
         
         console.log(soma(7,7, 9))
-        console.log(soma(7, 7, 9 ,20))
+        console.log(soma(7, 7, 9 ,20)) //javascript não quebra com mais ou menos parametros, ele os ignora e segue o fluxo
         console.log(soma(7))
         console.log(soma())
+        
+
+        function soma2(){
+            console.log(arguments)
+            var resultado = 0
+            for(var i in arguments){
+                console.log(arguments[i])
+                resultado += arguments[i]
+            }
+            return resultado
+        }
+        
+        console.log(soma2(7, 5, 3.2, "Texto"))
 
     </script>
 

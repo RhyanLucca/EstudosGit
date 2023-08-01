@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudos ASP Classico</title>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link href="stylex.css" rel="stylesheet" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
 </head>
 <body>
 
@@ -21,7 +22,7 @@
             <li><a href="condicionais.asp">Condicionais</a></li>
             <li><a href="loopings.asp">Loopings</a></li>
             <li><a href="funcoes.asp">Funções</a></li>
-            <li><a href="formularios/formularios_get.asp">Formulários</a></li>
+            <li><a href="http://localhost/development/ASP/formularios/formularios_get.asp">Formulários</a></li>
             <!-- <li><a href="formularios/formularios_get.asp?valor1">Formulários</a></li> -->
             <li><a href="cookies.asp">Cookies</a></li>
             <li><a href="sessao.asp">Sessão</a></li>
@@ -29,11 +30,11 @@
             <li><a href="global.asa">Global</a></li>
             <li><a href="response.asp">Response/request</a></li>
             <li><a href="server.asp">Server</a></li>
-            <li><a href="fileSystem.asp">Objeto File System</a></li>
+            <li><a href="fileSystem.asp">Objeto  File System</a></li>
             <li><a href="dicionarios.asp">Dicionários</a></li>
             <li><a href=""></a>AdRotator</li>
             <li><a href="browserCap.asp">BrowserCap</a></li>
-            <li><a href="crud/index_crud.asp">Crud</a></li>
+            <li><a href="http://localhost/development/ASP/vamove/login/login.asp">Crud</a></li>
         </ul>
     </div>
 
