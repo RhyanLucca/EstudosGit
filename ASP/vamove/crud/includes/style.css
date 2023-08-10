@@ -1,0 +1,23 @@
+.tittle{
+    text-align: center;
+}
+
+.container{
+
+    /* width: 100px;   */
+    padding: 1rem; 
+    border-radius: 1rem;
+}
+
+table tr, td{
+    border: 1px solid black; 
+    width: 700px;  
+    padding: 2rem; 
+    border-radius: 1rem;
+}
+
+.btn-cadastrar{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}

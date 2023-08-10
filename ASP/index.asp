@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudos ASP Classico</title>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link href="stylex.css" rel="stylesheet" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
 </head>
 <body>
 
@@ -33,7 +34,7 @@
             <li><a href="dicionarios.asp">Dicionários</a></li>
             <li><a href=""></a>AdRotator</li>
             <li><a href="browserCap.asp">BrowserCap</a></li>
-            <li><a href="crud/index_crud.asp">Crud</a></li>
+            <li><a href="http://localhost/development/ASP/vamove/login/login.asp">Crud</a></li>
         </ul>
     </div>
 
