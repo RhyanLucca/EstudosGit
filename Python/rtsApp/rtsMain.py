@@ -155,7 +155,8 @@ class Aplication():
         self.valor= ''
         
         def estoque_Crud():
-            if prodBtn
+            pass
+            #if prodBtn
         #     global btnClicked
         #     btnClicked = not btnClicked
             
