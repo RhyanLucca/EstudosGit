@@ -47,6 +47,7 @@ class Aplication():
         self.scr_height = self.app.winfo_screenheight()
         scr_width = self.scr_width /2
         scr_height=self.scr_height / 2
+        self.font = "Arial Bold"
         #print(scr_width)
         #print(scr_height)
         frameLogin= ctk.CTkFrame(master=self.frameGeral, width=scr_width, height=scr_height)# fg_color="black",
@@ -65,15 +66,15 @@ class Aplication():
 
         # ctk.CTkLabel(master=self.frameLogin, text="Insira o nome de usuario").grid(row=2, column=1)
 
-        ctk.CTkLabel(master=frameLogin, text="Usuário", font=("calibri bold", scr_width/20)).place(relx=0.1, rely=0.1)
+        ctk.CTkLabel(master=frameLogin, text="Usuário", font=(f"{self.font}", self.scr_width/40)).place(relx=0.1, rely=0.1)
 
-        userEntry= ctk.CTkEntry(master=frameLogin, placeholder_text="Insira o usuário", width=scr_width/1.2 ,font=("calibri", scr_width/25)).place(relx=0.1, rely=0.25)
+        userEntry= ctk.CTkEntry(master=frameLogin, placeholder_text="Insira o usuário", width=scr_width/1.2 ,font=(f"{self.font}", self.scr_width/40)).place(relx=0.1, rely=0.25)
 
-        ctk.CTkLabel(master=frameLogin, text="Senha", font=("calibri bold", scr_width/20)).place(relx=0.1, rely=0.4)
+        ctk.CTkLabel(master=frameLogin, text="Senha", font=(f"{self.font}", self.scr_width/40)).place(relx=0.1, rely=0.4)
 
-        userEntry= ctk.CTkEntry(master=frameLogin, placeholder_text="Insira a senha", width=scr_width/1.2 ,font=("calibri", scr_width/25)).place(relx=0.1, rely=0.55)
+        userEntry= ctk.CTkEntry(master=frameLogin, placeholder_text="Insira a senha", width=scr_width/1.2 ,font=(f"{self.font}", self.scr_width/40)).place(relx=0.1, rely=0.55)
 
-        btnLogin = ctk.CTkButton(master=frameLogin, text="Entrar", command=sair_da_tela, width=scr_width/2, font=("calibri", scr_width/20)).place(relx=0.1, rely=0.8)
+        btnLogin = ctk.CTkButton(master=frameLogin, text="Entrar", command=sair_da_tela, width=scr_width/2, font=(f"{self.font}", self.scr_width/40)).place(relx=0.1, rely=0.8)
 
 
     def frame_menu_lateral(self):
@@ -154,32 +155,43 @@ class Aplication():
 
         self.valor= ''
         
-        def estoque_Crud():
-            pass
-            #if prodBtn
-        #     global btnClicked
-        #     btnClicked = not btnClicked
+        def fornecedores_crud():
+
+            frameCrud = ctk.CTkFrame(master=self.frameEstoque, width=(self.scr_width)-(self.scr_width/100)*500, corner_radius=False, border_color="black", border_width=1)
+            frameCrud.pack(fill='both', side="right", expand=True)
+            self.frame_menu_lateral()
+            ctk.CTkLabel(master=frameCrud, text="Fornecedores", font=(f"{self.font}", self.scr_width/30)).place(relx=0.1, rely=0.05)
             
-        # btnClicked = False
-                #self.frameEstoque
-            #     tela = "Fornecedores"
+            CodigoEntry = ctk.CTkEntry(master=frameCrud, placeholder_text="Código do fornecedor", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/40))
+            CodigoEntry.place(relx=0.1, rely=0.2)
 
-        frameCrud = ctk.CTkFrame(master=self.frameEstoque, width=(self.scr_width)-(self.scr_width/100)*500, corner_radius=False, border_color="black", border_width=1)
-        frameCrud.pack(fill='both', side="right", expand=True)
-        self.frame_menu_lateral()
-        ctk.CTkLabel(master=self.frameEstoque, text="valor", font=(f"{self.font}", self.scr_width/30)).place(relx=0.1, rely=0.05)
+            nameEntry = ctk.CTkEntry(master=frameCrud, placeholder_text="Nome do fornecedor", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/40))
+            nameEntry.place(relx=0.1, rely=0.35)
 
-        # def estoque_produtos():
-        #     print(self.FrameSelecinado)
-        #     frameProdutos = ctk.CTkFrame(master=self.frameEstoque, width=(self.scr_width)-(self.scr_width/100)*500, corner_radius=False, border_color="black", fg_color="red", border_width=1)
-        #     frameProdutos.pack(fill='both', side="right", expand=True)
-        #     self.frame_menu_lateral()
-        #     ctk.CTkLabel(master=self.frameEstoque, text="Produtos", font=(f"{self.font}", self.scr_width/30)).place(relx=0.1, rely=0.05)
-        #     print(self.FrameSelecinado)
+            ContatoEntry = ctk.CTkEntry(master=frameCrud, placeholder_text="Contato do fornecedor", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/40))
+            ContatoEntry.place(relx=0.1, rely=0.50)
 
-        fornecBtn = ctk.CTkButton(master=self.frameEstoque, text="Fornecedores", command=estoque_Crud, width=(self.scr_width/100)*35, font=(f"{self.font}", self.scr_width/30)).place(relx=0.4, rely=0.25, anchor=CENTER)
-        prodBtn = ctk.CTkButton(master=self.frameEstoque, text="Produtos", command=estoque_Crud, width=(self.scr_width/100)*35, font=(f"{self.font}", self.scr_width/30)).place(relx=0.4, rely=0.45,anchor=CENTER)
-        analEstoqueBtn = ctk.CTkButton(master=self.frameEstoque, text="Analisar Estoque", command=estoque_Crud, width=(self.scr_width/100)*35, font=(f"{self.font}", self.scr_width/30)).place(relx=0.4, rely=0.65,anchor=CENTER)
+            enderecoEntry = ctk.CTkEntry(master=frameCrud, placeholder_text="Endereço do fornecedor", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/40))
+            enderecoEntry.place(relx=0.1, rely=0.65)
+
+
+        def produtos_crud():
+
+            frameCrud = ctk.CTkFrame(master=self.frameEstoque, width=(self.scr_width)-(self.scr_width/100)*500, corner_radius=False, border_color="black", border_width=1)
+            frameCrud.pack(fill='both', side="right", expand=True)
+            self.frame_menu_lateral()
+            ctk.CTkLabel(master=frameCrud, text="Produtos", font=(f"{self.font}", self.scr_width/30)).place(relx=0.1, rely=0.05)
+
+        def analEstoque_crud():
+
+            frameCrud = ctk.CTkFrame(master=self.frameEstoque, width=(self.scr_width)-(self.scr_width/100)*500, corner_radius=False, border_color="black", border_width=1)
+            frameCrud.pack(fill='both', side="right", expand=True)
+            self.frame_menu_lateral()           
+            ctk.CTkLabel(master=frameCrud, text="Analisar Estoque", font=(f"{self.font}", self.scr_width/30)).place(relx=0.1, rely=0.05)
+
+        fornecBtn = ctk.CTkButton(master=self.frameEstoque, text="Fornecedores", command=fornecedores_crud, width=(self.scr_width/100)*35, font=(f"{self.font}", self.scr_width/30)).place(relx=0.5, rely=0.25, anchor=CENTER)
+        prodBtn = ctk.CTkButton(master=self.frameEstoque, text="Produtos", command=produtos_crud, width=(self.scr_width/100)*35, font=(f"{self.font}", self.scr_width/30)).place(relx=0.5, rely=0.45,anchor=CENTER)
+        analEstoqueBtn = ctk.CTkButton(master=self.frameEstoque, text="Analisar Estoque", command=analEstoque_crud, width=(self.scr_width/100)*35, font=(f"{self.font}", self.scr_width/30)).place(relx=0.5, rely=0.65,anchor=CENTER)
 
 
 

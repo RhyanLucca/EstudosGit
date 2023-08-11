@@ -18,5 +18,3 @@ while cont <=x:
 
 print("LÁ ELE 1000 VEZES!!!")
 time.sleep(3)
-
-
