@@ -204,8 +204,11 @@ class Aplication():
             def obter():
                 try:
                     itemSelecionado = tv.selection()[0]
-                    valores = tv.item(itemSelecionado, "values")
-                    print(valores)
+                    tv.get_children()
+                    for value in tv.item['values']:
+                        print(value)
+                    #valores = tv.item(itemSelecionado, "values")
+                    #print(valores)
                 except:
                     print("Selecione um item válido")
 
