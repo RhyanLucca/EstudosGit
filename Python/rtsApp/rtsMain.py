@@ -154,6 +154,7 @@ class Aplication():
 
         self.FrameSelecinado = self.frameInicial
 
+
     def estoque_frame(self):
         self.FrameSelecinado.pack_forget()
         self.frameEstoque = ctk.CTkFrame(master=self.frameGeral, width=self.scr_width, corner_radius=False, border_color="black", border_width=1)#fg_color="pink",
@@ -177,7 +178,6 @@ class Aplication():
 
             self.cursor = self.con.cursor()
 
-            self.FrameSelecinado.pack_forget()
             def gravar():
                 if CodigoEntry.get() == "": #or  nameEntry.get=="" or ContatoEntry.get() == "" or enderecoEntry.get() == "":
                     print("erro")
@@ -188,11 +188,13 @@ class Aplication():
                     ContatoEntry.delete(0, END) 
                     enderecoEntry.delete(0, END)
 
-
             def deletar():
                 try:
                     itemSelecionado = tv.selection()[0]
-                    tv.delete(itemSelecionado)
+                    fornecedoresQueryDEL = f"DELETE FROM fornecedores WHERE idFornecedores = {itemSelecionado}"
+                    print(fornecedoresQueryDEL)
+                    itemSelecionado2 = tv.selection()
+                    print(itemSelecionado2)
                 except:
                     print("Selecione um item válido")
 
@@ -206,44 +208,55 @@ class Aplication():
                     print("Selecione um item válido")
 
 
-
+            self.FrameSelecinado.pack_forget()
             frameCrud = ctk.CTkFrame(master=self.frameGeral, width=(self.scr_width)-(self.scr_width/100)*500, corner_radius=False, border_color="black", border_width=1)
             frameCrud.pack(fill='both', side="right", expand=True)
-            self.frame_menu_lateral()
+
             self.FrameSelecinado = frameCrud
 
-            ctk.CTkLabel(master=self.FrameSelecinado, text="Fornecedores", font=(f"{self.font}", self.scr_width/30)).place(relx=0.1, rely=0.05)
+            frameCrud.grid_columnconfigure(0, weight=1)
+            frameCrud.grid_columnconfigure(1, weight=1)
 
+            rows = 20
 
-            ctk.CTkLabel(master=self.FrameSelecinado, text="Código do Fornecedor *", font=(f"{self.font}", self.scr_width/50)).place(relx=0.1, rely=0.15)
-            CodigoEntry = ctk.CTkEntry(master=self.FrameSelecinado, placeholder_text="Código do fornecedor", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/50))
-            CodigoEntry.place(relx=0.1, rely=0.2)
+            for row in range(rows):
+                frameCrud.grid_rowconfigure(row, weight=1)
 
-            ctk.CTkLabel(master=self.FrameSelecinado, text="Nome do Fornecedor *", font=(f"{self.font}", self.scr_width/50)).place(relx=0.1, rely=0.25)
-            nameEntry = ctk.CTkEntry(master=self.FrameSelecinado, placeholder_text="Nome do fornecedor", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/40))
-            nameEntry.place(relx=0.1, rely=0.30)
+            self.frame_menu_lateral()
+            ctk.CTkLabel(master=self.FrameSelecinado, text="Fornecedores", font=(f"{self.font}", self.scr_width/30)).grid(row=0, column=0)
+            
+            ctk.CTkLabel(master=self.FrameSelecinado, text="Código do Fornecedor *", font=(f"{self.font}", self.scr_width/50)).grid(row=2, column=0)
+            CodigoEntry = ctk.CTkEntry(master=self.FrameSelecinado, placeholder_text="123ABC", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/50))
+            CodigoEntry.grid(row=3, column=0)
 
-            ctk.CTkLabel(master=self.FrameSelecinado, text="Contato do Fornecedor", font=(f"{self.font}", self.scr_width/50)).place(relx=0.1, rely=0.35)
-            ContatoEntry = ctk.CTkEntry(master=self.FrameSelecinado, placeholder_text="Contato do fornecedor", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/40))
-            ContatoEntry.place(relx=0.1, rely=0.4)
+            ctk.CTkLabel(master=self.FrameSelecinado, text="Nome do Fornecedor *", font=(f"{self.font}", self.scr_width/50)).grid(row=4, column=0)#.place(relx=0.1, rely=0.27)
+            nameEntry = ctk.CTkEntry(master=self.FrameSelecinado, placeholder_text="Fornecedor da Silva", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/50))
+            nameEntry.grid(row=5, column=0)#.place(relx=0.1, rely=0.30)
 
-            ctk.CTkLabel(master=self.FrameSelecinado, text="E-mail do Fornecedor", font=(f"{self.font}", self.scr_width/50)).place(relx=0.1, rely=0.45)
-            emailEntry = ctk.CTkEntry(master=self.FrameSelecinado, placeholder_text="email do fornecedor", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/40))
-            emailEntry.place(relx=0.1, rely=0.5)
+            ctk.CTkLabel(master=self.FrameSelecinado, text="Contato do Fornecedor", font=(f"{self.font}", self.scr_width/50)).grid(row=6, column=0)#.place(relx=0.1, rely=0.37)
+            ContatoEntry = ctk.CTkEntry(master=self.FrameSelecinado, placeholder_text="11999999999", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/50))
+            ContatoEntry.grid(row=7, column=0)#.place(relx=0.1, rely=0.4)
 
-            ctk.CTkLabel(master=self.FrameSelecinado, text="Contato do Fornecedor", font=(f"{self.font}", self.scr_width/50)).place(relx=0.1, rely=0.55)
-            enderecoEntry = ctk.CTkEntry(master=self.FrameSelecinado, placeholder_text="Endereço do fornecedor", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/40))
-            enderecoEntry.place(relx=0.1, rely=0.6)
+            ctk.CTkLabel(master=self.FrameSelecinado, text="E-mail do Fornecedor", font=(f"{self.font}", self.scr_width/50)).grid(row=8, column=0)#.place(relx=0.1, rely=0.47)
+            emailEntry = ctk.CTkEntry(master=self.FrameSelecinado, placeholder_text="fornecedor@gmail.com", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/50))
+            emailEntry.grid(row=9, column=0)#.place(relx=0.1, rely=0.5)
+
+            ctk.CTkLabel(master=self.FrameSelecinado, text="Contato do Fornecedor", font=(f"{self.font}", self.scr_width/50)).grid(row=10, column=0)#.place(relx=0.1, rely=0.57)
+            enderecoEntry = ctk.CTkEntry(master=self.FrameSelecinado, placeholder_text="Av. Fornec Número 1", width=(self.scr_width/100)*40, font=(f"{self.font}", self.scr_width/50))
+            enderecoEntry.grid(row=11, column=0)#.place(relx=0.1, rely=0.6)
 
             #ctk.CTkLabel(master=self.FrameSelecinado, text="Os campos com * são obrigatórios", font=(f"{self.font}", self.scr_width/60)).place(relx=0.1, rely=0.65)
 
-            tv = ttk.Treeview(master=self.FrameSelecinado, columns=("id", "codigo", "nome", "contato", "endereco"), show="headings")
+            #frameTv = ctk.CTkFrame(master=frameCrud, fg_color="red")
+            #frameTv.grid(row=0, column=1, rowspan=3)
+
+            tv = ttk.Treeview(master=frameCrud, columns=("id", "codigo", "nome", "contato", "endereco"), show="headings")
             #tv['columns']=('Rank', 'Name', 'Badge')
             tv.column('id',  width=round((self.scr_width/100)*3), stretch=NO)
             tv.column('codigo', width=round((self.scr_width/100)*5), anchor=CENTER)
             tv.column('nome', width=round((self.scr_width/100)*15), anchor=CENTER)
             tv.column('contato', width=round((self.scr_width/100)*7), anchor=CENTER)
-            tv.column('endereco', width=round((self.scr_width/100)*13), anchor=CENTER)
+            tv.column('endereco', width=round((self.scr_width/100)*10), anchor=CENTER)
 
             tv.heading('id', text='ID', anchor=CENTER)
             tv.heading('codigo', text='Codigo', anchor=CENTER)
@@ -268,9 +281,7 @@ class Aplication():
                 endFornec= r[5]
                 tv.insert(parent='', index="end", text='', values=(idFornec, codFornec, nomeFornec, contFornec, emailFornec, endFornec))
                 
-
                 #print(lista[4])
-
 
             #for (id, nome, fone, end) in lista:
             #    tv.insert(parent='', index="end", text='', values=(id, nome,fone, end))
@@ -280,16 +291,18 @@ class Aplication():
             # tv.insert(parent='', index=3, iid=3, text='', values=('4','Vimal','Delta'))
             # tv.insert(parent='', index=4, iid=4, text='', values=('5','Manjeet','Echo'))
 
-            tv.place(relx=0.53, rely=0.15, height=(self.scr_height/100) * 49)
+            #tv.place(relx=0.6, rely=0.15, height=(self.scr_height/100) * 49)
+            tv.place(relx=0.57, rely=0.1, height=(self.scr_height/100) * 70)
+            #tv.place(relx=0, rely=0)#height=(self.scr_height/100) * 49)
+            #tv.grid(row=1, column=1)
 
             btnSalvar = ctk.CTkButton(master=self.FrameSelecinado, text="Gravar", command=gravar, width=(self.scr_width/100)*17, font=(f"{self.font}", self.scr_width/40))
-            btnSalvar.place(relx=0.1, rely=0.85)
+            btnSalvar.place(relx=0.1, rely=0.9)
             btnVisualizar = ctk.CTkButton(master=self.FrameSelecinado, text="Obter", command=obter, width=(self.scr_width/100)*17, font=(f"{self.font}", self.scr_width/40))
-            btnVisualizar.place(relx=0.329, rely=0.85)
-            #btnAtualizar = ctk.CTkButton(master=self.FrameSelecinado, text="Editar", width=(self.scr_width/100)*17, font=(f"{self.font}", self.scr_width/40)).place(relx=0.55, rely=0.85)
+            btnVisualizar.place(relx=0.329, rely=0.9)
+            #btnAtualizar = ctk.CTkButton(master=self.FrameSelecinado, text="Editar", width=(self.scr_width/100)*17, font=(f"{self.font}", self.scr_width/40)).place(relx=0.55, rely=0.9)
             btnDeletar = ctk.CTkButton(master=self.FrameSelecinado, text="Excluir", command=deletar, width=(self.scr_width/100)*17, font=(f"{self.font}", self.scr_width/40))
-            btnDeletar.place(relx=0.75, rely=0.85)
-
+            btnDeletar.place(relx=0.75, rely=0.9)
 
         def produtos_crud():
 
@@ -320,6 +333,7 @@ class Aplication():
         fornecBtn = ctk.CTkButton(master=self.frameEstoque, text="Fornecedores", command=fornecedores_crud, width=(self.scr_width/100)*35, font=(f"{self.font}", self.scr_width/30)).place(relx=0.5, rely=0.25, anchor=CENTER)
         prodBtn = ctk.CTkButton(master=self.frameEstoque, text="Produtos", command=produtos_crud, width=(self.scr_width/100)*35, font=(f"{self.font}", self.scr_width/30)).place(relx=0.5, rely=0.45,anchor=CENTER)
         analEstoqueBtn = ctk.CTkButton(master=self.frameEstoque, text="Analisar Estoque", command=analEstoque_crud, width=(self.scr_width/100)*35, font=(f"{self.font}", self.scr_width/30)).place(relx=0.5, rely=0.65,anchor=CENTER)
+
 
     def vendas_frame(self):
         
