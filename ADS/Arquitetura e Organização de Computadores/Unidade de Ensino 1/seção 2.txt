@@ -1,0 +1,24 @@
+Un. 1 Seção 2.
+
+
+Gerações de computadores
+
+    1 Geração (Entre 1946 e 1954)
+        Os computadores da 1 Geração funcionavam à válvula, um tubo de vidro parecido com uma lâmpada e que tinha função de proporcionar o processamento de informações. ENIAC, o primeiro computador.
+
+    2 Geração (Entre 1955 e 1964)
+        Nos computadores da 2 Geração, as válvulas foram substituídas pelos transistores e surgiu o armazenamento em disco e fita magnética.
+
+    3 geração(Entre 1964 e 1977)
+        Nos computadores da 3 geração, foram introduzidos os circuitos integrados, chamados assim porque integravam milhares de transistores em um único componente eletrônico.
+
+    4 Geração (Entre 1977 e 1991)
+        A 4 Geração trouxe os computadores o processador, um chip dotado de unidade central de processamento. Foram criados sistemas como o Unix, o MS-DOS e o Apple Macintosh. Um grande avanço foi o lançamento dos microcomputadores pessoais, também chamados de PC´s.
+
+    5 Geração (A partir de 1991)
+        A 5 geração trouxe aos computadores inúmeras inovações, tais como o processador 64 bits, discos rígidos de grande capacidade, memórias de trabalaho e processamento cada vez maiores, além de inúmeros dispositivos que tornaram o uso do computador cada vez maior, como a capacidade de conexão, fundamental para a internet.
+
+    Lei de Moore:" A densidade de transistores em um circuito integrado irá dobrar a cada ano." 
+    Até o final do século 20, os computadores vão dobrar de velocidade a cada 18 meses.
+
+Leitura da seção 1.2 do livro didático.

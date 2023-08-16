@@ -1,0 +1,37 @@
+Un. 1 Seção 1.
+
+O que irei aprender?
+    1. Conceitos e funções básicas de um computador
+    2. Caracteristicas de cada geração
+    3. Lei de Moore
+    4. Evolução e arquitetura de processadores
+    5. CPU
+    6. Unidades e dispositivos E/S
+
+1. Conceitos e funções básicas de um computador.
+
+    Os diversos componentes de um computador podem ser classificados de acordo com a função básica que tem:
+
+    -Unidade de entrada: onde podemos inserir/entrar com dados no computador.
+    EX: Teclado, Mouse e TouchScreen.
+
+    -Unidade de saída: onde os dados podem ser visualizados.
+    EX: Telas e Impressoras.
+
+    -Unidade de processamento: onde acontece processamento das informações -Unidade Central de Processamento ou Central Processing Unit (CPU)
+    EX: Processador do computador.
+
+    -Unidade de armazenamento: onde se alocam as memórias.
+    EX. RAM, HD e discos externos.
+
+    A informatica é dividida em duas partes
+
+    Física:
+    HARDWARE 
+
+    Lógica:
+    SOFTWARE, musicas, mp3, mp4, png
+
+    Mapa mental
+
+Leitura da seção 1.1 do livro didático.

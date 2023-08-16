@@ -1,0 +1,51 @@
+Un.1 Seção 3.
+
+O que  irei aprender?
+    -Como a arquitetura de computadores foi pensada.
+    -Como foi o surgimento dos processadores.
+    -Como os processadores evoluíram até os dias atuais.
+    -Qual o papel dos processadores nos computadores.
+    -Como os processadores controlam os demais dispositivos dentro de uma máquina.
+
+    -As memorias de trabalho RAM.
+    -Os dispositivos e componentes de entrada e saída de dados.
+    -A forma como os processadores podem administrar quantidades de memória
+    As limitações de gerenciamento das memórias definidas pelos barramentos que cada tipo de tecnologia possui.
+
+
+    Arquitetura de 32 e 64 bits.
+
+    -Família x86 de 16 bits - processador 8088, usado nos primeiros PC´s.
+    -Processadores de 32 bits - 386, 486, Pentium I, II, III e IV, Pentium Celeron. Conseguem endereçar até, no máximo, 4 GB de RAM.
+    -Processadores de 64 bits - AMD 64 bits. Conseguem endereçar quantidades maiores do que 4 GB de RAM.
+    -Processadores Multicore - tecnologia de processadores com mais de um núcleo de processamento.
+    -Intel Core - processadores Core 2 Duo, Pentium Dual Core, Core 2 Quad, i3, i5 e i7.
+
+    Diferença entre sistemas 32 e 64 bits.
+
+        Um processador de 64 bits processa o dobro de informação que um de 32 bits ao mesmo tempo.
+        Os processadores de 64 bits podem gerenciar muito mais memória RAM, enquanto os de 32 bits podem gerenciar até, no máximo 4 GB de RAM.
+        É necessário um sistema operacional rodando em 64 bits.
+        
+    A arquitetura dos computadores é resultado da evolução de vários equipamentos inventados com a finalidade de facilitar a execução de cálculos matemáticos.
+    Após o final da Segunda Guerra Mundial, o pesquisador e cientista John Von Neumann introduziu a ideia de um computador com uma Unidade Central de Processamento(Central Processing Unit - CPU) em um projeto de computador. A arquitetura descrita e utilizada na CPU deste computador permitia armazenamento de dados e programas na mesma unidade de memória, por meio de seus endereçamentos. Isso de origem aos primeiros processadores, que evoluíram até os dias atuais.
+
+    Essa arquitetura foi adotada para as gerações seguintes de computadores. Um detalhe contribuiu para que esse conceito evoluísse rapidamente: o surgimento dos chips de silício, que permitiram pouco tempo depois o surgimento dos processadores, os quais foram desenvolvidos considerando o modelo proposto pela arquitetura de Von Neumann.
+
+    Esses Processadores traziam internamente a CPU, composta por uma Unidade Lógica e Aritmética (ULA) e por uma unidade de controle (que controla as unidades de memória).
+
+    Esse processador por meio de sua CPU, também tinha a função de controlar os dispositivos de entrada e saída do computador, sendo resposável também por carregar e executar os programas.
+
+    Entre as décadas de 1960 e 1970 surgiram as CPU´s, desenvolvidas em circuitos integrados com um único chip de silício, e que traziam as intruções observadas pela arquitetura de Von Neumann.
+
+    No final da década de 1970, surgiram os microcomputadores dotados de processadores, e que se tornaram cada vez mais rápidos durante sua revolução, que continua até os dias atuais.
+
+    Esses processadores podem ser classificados em gerações distintas, levando em conta a quantidade de bits que eles conseguem processar por vez.
+
+    Os primeiros processadores foram os 8086 e 8088, que funcionavam com tecnologia de 16 bits e pouca capacidade de gerenciamento de memória.
+
+    Os atuais processadores de 64 bits têm estruturas de múltiplos núcleos, capacidade de gerenciamento de memória cada vez maior e valocidade nunca antes imaginadas.
+
+    A quantidade de bits de um processador representa a quantidade de informação que pode ser processada por vez, porém, a velocidade que esta informação é processada é dada pela velocidade que o processador funciona em medida de Hertz, nos computadores atuais na casa dos Gigahertz.
+
+Leitura da seção 1.3 do livro didático.
