@@ -1,5 +1,7 @@
 Un. 1 Seção 1.
 
+Arquitetura e Organização de Computadores.
+
 O que irei aprender?
     1. Conceitos e funções básicas de um computador
     2. Caracteristicas de cada geração

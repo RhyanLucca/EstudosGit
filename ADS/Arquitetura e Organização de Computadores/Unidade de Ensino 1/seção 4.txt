@@ -1,0 +1,23 @@
+Un.1 seção 4.
+
+A Hierarquia de Níveis de Computador.
+
+O que irei aprender?
+    -Como são divididas as funções dos processadores.
+    -Como os processadores controlam o funcionamento do computador e de seus componentes.
+    -Como esssa arquitetura utiliza a memória para executar o processamento.
+
+    O que será preciso:
+        -Conhecer a arquitetura de Von Neumann.
+        -Entender como é constituída a Unidade Central de Processamento(Central Processing Unit -CPU).
+        -Conehcer o que faz a unidade de controle.
+        -Conhecer o que faz a Unidade Lógica e Aritmética(ULA).
+        -COnhecer qual a função da memória RAM no computador.
+        -Entender como os dados são inseridos e retornados através dos dispositivos de entrada e saída (E/S).
+
+    A Hierarquia de Níveis de Computador.
+        A arquitetura dos componentes é resultado de vários equipamentos inventados com a finalidade de facilitar a execução de cálculos matemáticos.
+
+        Após a Segunda Guerra Mundial, esses computadores começaram a ser usados por empresas para diversas aplicações.
+
+        

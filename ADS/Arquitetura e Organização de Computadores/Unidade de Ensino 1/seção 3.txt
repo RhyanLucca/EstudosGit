@@ -1,5 +1,7 @@
 Un.1 Seção 3.
 
+A Estrutura Básica de um Computador
+
 O que  irei aprender?
     -Como a arquitetura de computadores foi pensada.
     -Como foi o surgimento dos processadores.
