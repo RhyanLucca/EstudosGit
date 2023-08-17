@@ -1,0 +1,19 @@
+Fundamentos dos sistemas computacionais.
+
+    Conceitos básicos de arquitetura e organização de computadores.
+    Funções básicas.
+    Equipamentos de cálculos antes dos computadores.
+    1 a 5 geração de computadores.
+    Lei de Moore.
+    Arquitetura dos processadores.
+    Funções da CPU.
+    Gerações de processadores.
+    Evolução dos processadores.
+    Arquitetura e gargalo de Von Neumann.
+    Arquiteturas diferentes da de Von Neumann.
+    Constituição da CPU.
+    Unidade de controle.
+    Unidade lógica e aritmética.
+    Memória RAM.
+    Barramentos.
+    Inserção e retorno de dados/ dispositivos E/S.

@@ -20,4 +20,20 @@ O que irei aprender?
 
         Após a Segunda Guerra Mundial, esses computadores começaram a ser usados por empresas para diversas aplicações.
 
-        
+        Neste período o pesquisador e cientista John Von Neumann introduziu a ideia de CPU em um projeto de computador.
+
+        A arquitetura descrita e utilizada na CPU deste computador permitia armazenamento de dados e programas na mesma unidade de memória por meio de seus endereçamentos, o que deu origem aos primeiros processadores, que evoluíram até os dias atuais.
+
+        Nessa arquitetura foram previstos:
+
+            -O uso de memórias que poderiam ser endereçadas pelos processadores e tinham a função de proporcionar espaços para que dados e programas fossem manipulados.
+
+            -A existência de dispositivos para que fosse feita a entrada de dados, bem como a existência de dispositivos para que os dados inseridos e até dados retornados após o processamento pudessem ser visualizados.
+
+        A capacidade de administrar a quantidade de memória RAM cresceu a cada geração de processador, que tem sua capacidade determinada pelo número de bits que consegue administrar por vez e, consequentemente, o quanto de memória consegue endereçar com o número de bits disponível.
+
+        Houve geração de processador de 16 bits, de 32 bits e de 64 bits, além de algumas outras inovações, como a quantidade de núcleos de processamento que cada processador pode ter.
+
+        Enfim, com o surgimento da internet, a rede mundial de computadores, teve início uma nova geração de máquinas e programas com capacidade de acessarem a rede, de se conectarem entre si e trocarem informações. Esta capacidade é chamada de interconexão, e trouxe novos conceitos de arquitetura de máquinas.
+
+Leitura da seção 1.4 do livro didático.
