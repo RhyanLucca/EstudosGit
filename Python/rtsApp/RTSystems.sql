@@ -70,9 +70,12 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-INSERT INTO fornecedores VALUES(null, "1234567B", "Chico´s Bar", "11912345678", "chicosbar@gmail.com", "Rua Belem 68 ap 13");
+INSERT INTO fornecedores VALUES(null, "1234567B", "Rhyan Lucca", "11912345678", "chicosbar@gmail.com", "Rua Belem 68 ap 13");
 INSERT INTO fornecedores VALUES(null, "1234567A", "Rodrigo´s Bar", "11987654311", "Rodrigos@gmail.com", "Rua Belem 68 ap 13");
 INSERT INTO fornecedores VALUES(null, "1234567C", "Papariko´s Bar", "11945678792", "paparikos@gmail.com", "Rua Belem 68 ap 13");
 INSERT INTO fornecedores VALUES(null, "1234567D", "Cabeçuda´s Bar", "11956780988", "cabecudas@gmail.com", "Rua Belem 68 ap 13");
 
+#DELETE FROM fornecedores WHERE idFornecedores = I009;
+
 select * from fornecedores;
+
