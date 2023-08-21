@@ -173,6 +173,10 @@ class Aplication():
 
             self.db_connect()
 
+            def popular():
+                supplierTreeView.delete(*supplierTreeView.get_children())
+                query = "SELECT * FROM "
+
             def gravar():
                 if CodigoEntry.get() == "": #or  nameEntry.get=="" or ContatoEntry.get() == "" or enderecoEntry.get() == "":
                     print("erro")
@@ -228,25 +232,29 @@ class Aplication():
             self.side_menu_frame()
             ctk.CTkLabel(master=self.currentFrame, text="Fornecedores", font=(f"{self.font}", self.scrWidth/30)).grid(row=0, column=0)
             
-            ctk.CTkLabel(master=self.currentFrame, text="Código do Fornecedor *", font=(f"{self.font}", self.scrWidth/50)).grid(row=2, column=0)
-            CodigoEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="123ABC", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
-            CodigoEntry.grid(row=3, column=0)
+            #ctk.CTkLabel(master=self.currentFrame, text="Código do Fornecedor *", font=(f"{self.font}", self.scrWidth/50)).grid(row=2, column=0)
+            CodigoEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Código do Fornecedor *", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
+            CodigoEntry.grid(row=2, column=0)
 
-            ctk.CTkLabel(master=self.currentFrame, text="Nome do Fornecedor *", font=(f"{self.font}", self.scrWidth/50)).grid(row=4, column=0)#.place(relx=0.1, rely=0.27)
-            nameEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Fornecedor da Silva", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
-            nameEntry.grid(row=5, column=0)#.place(relx=0.1, rely=0.30)
+            #ctk.CTkLabel(master=self.currentFrame, text="Nome do Fornecedor *", font=(f"{self.font}", self.scrWidth/50)).grid(row=4, column=0)#.place(relx=0.1, rely=0.27)
+            nameEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Nome do Fornecedor", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
+            nameEntry.grid(row=4, column=0)#.place(relx=0.1, rely=0.30)
 
-            ctk.CTkLabel(master=self.currentFrame, text="Contato do Fornecedor", font=(f"{self.font}", self.scrWidth/50)).grid(row=6, column=0)#.place(relx=0.1, rely=0.37)
-            ContatoEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="11999999999", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
-            ContatoEntry.grid(row=7, column=0)#.place(relx=0.1, rely=0.4)
+            #ctk.CTkLabel(master=self.currentFrame, text="Contato do Fornecedor", font=(f"{self.font}", self.scrWidth/50)).grid(row=6, column=0)#.place(relx=0.1, rely=0.37)
+            ContatoEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Contato do Fornecedor", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
+            ContatoEntry.grid(row=6, column=0)#.place(relx=0.1, rely=0.4)
 
-            ctk.CTkLabel(master=self.currentFrame, text="E-mail do Fornecedor", font=(f"{self.font}", self.scrWidth/50)).grid(row=8, column=0)#.place(relx=0.1, rely=0.47)
-            emailEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="fornecedor@gmail.com", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
-            emailEntry.grid(row=9, column=0)#.place(relx=0.1, rely=0.5)
+            #ctk.CTkLabel(master=self.currentFrame, text="E-mail do Fornecedor", font=(f"{self.font}", self.scrWidth/50)).grid(row=8, column=0)#.place(relx=0.1, rely=0.47)
+            emailEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="E-mail do Fornecedor", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
+            emailEntry.grid(row=8, column=0)#.place(relx=0.1, rely=0.5)
 
-            ctk.CTkLabel(master=self.currentFrame, text="Contato do Fornecedor", font=(f"{self.font}", self.scrWidth/50)).grid(row=10, column=0)#.place(relx=0.1, rely=0.57)
-            enderecoEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Av. Fornec Número 1", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
-            enderecoEntry.grid(row=11, column=0)#.place(relx=0.1, rely=0.6)
+            #ctk.CTkLabel(master=self.currentFrame, text="Contato do Fornecedor", font=(f"{self.font}", self.scrWidth/50)).grid(row=10, column=0)#.place(relx=0.1, rely=0.57)
+            enderecoEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Contato do Fornecedor", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
+            enderecoEntry.grid(row=10, column=0)#.place(relx=0.1, rely=0.6)
+
+            
+
+
 
         #FIM DO FORMULARIO
 
@@ -271,7 +279,7 @@ class Aplication():
             supplierTreeView.heading('contato', text='Contato', anchor=CENTER)
             supplierTreeView.heading('endereco', text='Endereço', anchor=CENTER)
 
-            fornecedoresQueryREAD = "SELECT * FROM fornecedores"
+            fornecedoresQueryREAD = "SELECT * FROM supplier"
 
             self.cursor.execute(fornecedoresQueryREAD)
 
