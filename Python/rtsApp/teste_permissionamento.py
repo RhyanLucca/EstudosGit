@@ -66,7 +66,7 @@ class Aplication():
         
         def exit_screen():
 
-            query = "SELECT userNome, permissao FROM users;"
+            query = "SELECT usersNome, usersPswd FROM users;"
 
             cursor = Aplication.db_connect(self)
 
@@ -103,7 +103,7 @@ class Aplication():
 
         ctk.CTkLabel(master=loginFrame, text="Senha", font=(f"{self.font}", self.scrWidth/40)).place(relx=0.1, rely=0.4)
 
-        senhaEntry= ctk.CTkEntry(master=loginFrame, placeholder_text="Insira a senha", width=scrWidth/1.2 ,font=(f"{self.font}", self.scrWidth/40))
+        senhaEntry= ctk.CTkEntry(master=loginFrame, show="*", placeholder_text="Insira a senha", width=scrWidth/1.2 ,font=(f"{self.font}", self.scrWidth/40))
         senhaEntry.place(relx=0.1, rely=0.55)
 
         btnLogin = ctk.CTkButton(master=loginFrame, text="Entrar", command=exit_screen, width=scrWidth/2, font=(f"{self.font}", self.scrWidth/40)).place(relx=0.1, rely=0.8)

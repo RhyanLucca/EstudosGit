@@ -68,20 +68,26 @@ CREATE TABLE IF NOT EXISTS `RTSystems`.`supplier_has_product` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `rtsystems`.`users` (
+  `usersID` INT NOT NULL AUTO_INCREMENT,
+  `usersNome` VARCHAR(45) NOT NULL,
+  `usersPswd` VARCHAR(45) NOT NULL,
+  `usersPermissao` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`usersID`))
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
-create table users(userNome VARCHAR(80) NOT NULL, permissao VARCHAR(1));
-insert into users values("Rhyan", 1);
-insert into users values("Bianca", 0);
-insert into users values("brhyanlucca@gmail.com", 1);
 
+create table users(userNome VARCHAR(80) NOT NULL, permissao VARCHAR(1));
+insert into users values(null, "Adm", "@Adm", 1);
 select * from users;
 
-DROP TABLE users;
+
 
 INSERT INTO supplier VALUES(null, "1234567B", "Rhyan Lucca", "11912345678", "chicosbar@gmail.com", "Rua Belem 68 ap 13", "51067792864", NULL);
 INSERT INTO supplier VALUES(null, "1234567A", "Rodrigo´s Bar", "11987654311", "Rodrigos@gmail.com", "Rua Belem 68 ap 13", "51067792864", NULL);
