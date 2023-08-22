@@ -64,9 +64,11 @@ class Aplication():
         loginFrame= ctk.CTkFrame(master=self.geralFrame, width=scrWidth, height=scrHeight)# fg_color="black",
         loginFrame.place(relx=0.5, rely=0.5, anchor=CENTER)
         
+        self.userPermissao = []
+
         def exit_screen():
 
-            query = "SELECT usersNome, usersPswd FROM users;"
+            query = "SELECT usersNome, usersPswd, usersPermissao FROM users;"
 
             cursor = Aplication.db_connect(self)
 
@@ -82,8 +84,9 @@ class Aplication():
             # print(listaUser)
 
             for r in listaUser:
-                #user = r[0]
+                user = r[0]
                 senha = r[1]
+                permissao = r[2]
                 #print(senha)
 
                 if entryUser in r and entryPswd == senha:
@@ -92,14 +95,23 @@ class Aplication():
                     global session
                     session = True
                     loginFrame.place_forget()
-                    self.initial_frame()
+                    
+                    # print(user)
 
+                    self.userPermissao = permissao
+
+                    self.initial_frame()
+                    self.side_menu_frame()
+
+                    print(user)
+
+                else:# not entryUser in r and entryPswd == senha:
+                    ctk.CTkLabel(master=loginFrame, text="Usuário ou senha incorretos.", text_color="red", font=(f"{self.font}", self.scrWidth/50)).place(relx=0.1, rely=0.65)
 
         ctk.CTkLabel(master=loginFrame, text="Usuário", font=(f"{self.font}", self.scrWidth/40)).place(relx=0.1, rely=0.1)
 
         userEntry= ctk.CTkEntry(master=loginFrame, placeholder_text="Insira o usuário", width=scrWidth/1.2 ,font=(f"{self.font}", self.scrWidth/40))
         userEntry.place(relx=0.1, rely=0.25)
-
 
         ctk.CTkLabel(master=loginFrame, text="Senha", font=(f"{self.font}", self.scrWidth/40)).place(relx=0.1, rely=0.4)
 
@@ -107,6 +119,7 @@ class Aplication():
         senhaEntry.place(relx=0.1, rely=0.55)
 
         btnLogin = ctk.CTkButton(master=loginFrame, text="Entrar", command=exit_screen, width=scrWidth/2, font=(f"{self.font}", self.scrWidth/40)).place(relx=0.1, rely=0.8)
+
 
     def side_menu_frame(self):
 
@@ -117,10 +130,10 @@ class Aplication():
         analysisImage = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\anal_light.png"), dark_image=Image.open(r"Python\rtsApp\anal_dark.png"), size=(imageHeight, imageWidth))
         usersImage =ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\user_light.png"), dark_image=Image.open(r"Python\rtsApp\user_dark.png"), size=(imageHeight, imageWidth))
         configImage = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\config_light.png"), dark_image=Image.open(r"Python\rtsApp\config_dark.png"), size=(imageHeight, imageWidth))
-        
 
         frame_widget_max= self.scrWidth/ 4
         frame_wdiget_min= self.scrWidth/ 18
+
 
         def decrease_menu():
             self.sideMenuFrame.place_forget()
@@ -135,7 +148,7 @@ class Aplication():
             rows = 6
             self.sideMenuFrame.grid_columnconfigure(0, weight=1)
             for row in range(rows):
-                self.sideMenuFrame.grid_rowconfigure(row, weight=1)
+                self.sideMenuFrame.grid_rowconfigure( row, weight=1)
 
             ctk.CTkLabel(master=self.sideMenuFrame, text="RTS SYSTEMS", font=(f"{self.font}", self.scrWidth/35)).place(relx=0.05, rely=0.05)    
             
@@ -270,9 +283,6 @@ class Aplication():
             enderecoEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Contato do Fornecedor", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
             enderecoEntry.grid(row=10, column=0)#.place(relx=0.1, rely=0.6)
 
-            
-
-
 
         #FIM DO FORMULARIO
 
@@ -282,52 +292,109 @@ class Aplication():
             #framesupplierTreeView.grid(row=0, column=1, rowspan=3)
 
         #INICIO DA TREEVIEW
+            if self.userPermissao == '1':
+                supplierTreeView = ttk.Treeview(master=frameCrud, columns=("id", "codigo", "nome", "contato", "endereco", "email", "documento", "custos"), selectmode="browse", show="headings")
+                #supplierTreeView['columns']=('Rank', 'Name', 'Badge')
+                supplierTreeView.column('id',  width=round((self.scrWidth/100)*3), stretch=NO)
+                supplierTreeView.column('codigo', width=round((self.scrWidth/100)*5), anchor=CENTER)
+                supplierTreeView.column('nome', width=round((self.scrWidth/100)*15), anchor=CENTER)
+                supplierTreeView.column('contato', width=round((self.scrWidth/100)*7), anchor=CENTER)
+                supplierTreeView.column('email', width=round((self.scrWidth/100)*7), anchor=CENTER)
+                supplierTreeView.column('endereco', width=round((self.scrWidth/100)*10), anchor=CENTER)
+                supplierTreeView.column('documento', width=round((self.scrWidth/100)*10), anchor=CENTER)
+                supplierTreeView.column('custos', width=round((self.scrWidth/100)*10), anchor=CENTER)
 
-            supplierTreeView = ttk.Treeview(master=frameCrud, columns=("id", "codigo", "nome", "contato", "endereco"), selectmode="browse", show="headings")
-            #supplierTreeView['columns']=('Rank', 'Name', 'Badge')
-            supplierTreeView.column('id',  width=round((self.scrWidth/100)*3), stretch=NO)
-            supplierTreeView.column('codigo', width=round((self.scrWidth/100)*5), anchor=CENTER)
-            supplierTreeView.column('nome', width=round((self.scrWidth/100)*15), anchor=CENTER)
-            supplierTreeView.column('contato', width=round((self.scrWidth/100)*7), anchor=CENTER)
-            supplierTreeView.column('endereco', width=round((self.scrWidth/100)*10), anchor=CENTER)
 
-            supplierTreeView.heading('id', text='ID', anchor=CENTER)
-            supplierTreeView.heading('codigo', text='Codigo', anchor=CENTER)
-            supplierTreeView.heading('nome', text='Nome', anchor=CENTER)
-            supplierTreeView.heading('contato', text='Contato', anchor=CENTER)
-            supplierTreeView.heading('endereco', text='Endereço', anchor=CENTER)
+                supplierTreeView.heading('id', text='ID', anchor=CENTER)
+                supplierTreeView.heading('codigo', text='Codigo', anchor=CENTER)
+                supplierTreeView.heading('nome', text='Nome', anchor=CENTER)
+                supplierTreeView.heading('contato', text='Contato', anchor=CENTER)
+                supplierTreeView.heading('email', text='E-mail', anchor=CENTER)
+                supplierTreeView.heading('endereco', text='Endereço', anchor=CENTER)
+                supplierTreeView.heading('documento', text='Documento', anchor=CENTER)
+                supplierTreeView.heading('custos', text='Custos', anchor=CENTER)
 
-            fornecedoresQueryREAD = "SELECT * FROM supplier"
+                fornecedoresQueryREAD = "SELECT * FROM supplier"
 
-            self.cursor.execute(fornecedoresQueryREAD)
+                self.cursor.execute(fornecedoresQueryREAD)
 
-            #lista = [["1", "Rhyan", "11985987199", "Rua belem 68 ap 13"],["2", "Rhyan", "11985987199", "Rua belem 68 ap 13"],["3", "Rhyan", "11985987199", "Rua belem 68 ap 13"]]
-            lista = self.cursor.fetchall()
+                #lista = [["1", "Rhyan", "11985987199", "Rua belem 68 ap 13"],["2", "Rhyan", "11985987199", "Rua belem 68 ap 13"],["3", "Rhyan", "11985987199", "Rua belem 68 ap 13"]]
+                lista = self.cursor.fetchall()
 
-            for r in lista:
-                
-                idFornec = r[0]
-                codFornec = r[1]
-                nomeFornec = r[2]
-                contFornec = r[3]
-                emailFornec = r[4]
-                endFornec= r[5]
-                supplierTreeView.insert(parent='', index="end", text='', values=(idFornec, codFornec, nomeFornec, contFornec, emailFornec, endFornec))
-                
-                #print(lista[4])
+                for r in lista:
+                    
+                    idSupplier = r[0]
+                    codSupplier = r[1]
+                    nomeSupplier = r[2]
+                    contSupplier = r[3]
+                    emailSupplier = r[4]
+                    endSupplier= r[5]
+                    docSupplier = r[6]
+                    custosSupplier= r[7]
+                    supplierTreeView.insert(parent='', index="end", text='', values=(idSupplier, codSupplier, nomeSupplier, contSupplier, emailSupplier, endSupplier, docSupplier, custosSupplier))
+                    
+                    #print(lista[4])
 
-            #for (id, nome, fone, end) in lista:
-            #    supplierTreeView.insert(parent='', index="end", text='', values=(id, nome,fone, end))
+                #for (id, nome, fone, end) in lista:
+                #    supplierTreeView.insert(parent='', index="end", text='', values=(id, nome,fone, end))
 
-            # supplierTreeView.insert(parent='', index=1, iid=1, text='', values=('2','Anil','Bravo'))
-            # supplierTreeView.insert(parent='', index=2, iid=2, text='', values=('3','Vinod','Charlie'))
-            # supplierTreeView.insert(parent='', index=3, iid=3, text='', values=('4','Vimal','Delta'))
-            # supplierTreeView.insert(parent='', index=4, iid=4, text='', values=('5','Manjeet','Echo'))
+                # supplierTreeView.insert(parent='', index=1, iid=1, text='', values=('2','Anil','Bravo'))
+                # supplierTreeView.insert(parent='', index=2, iid=2, text='', values=('3','Vinod','Charlie'))
+                # supplierTreeView.insert(parent='', index=3, iid=3, text='', values=('4','Vimal','Delta'))
+                # supplierTreeView.insert(parent='', index=4, iid=4, text='', values=('5','Manjeet','Echo'))
 
-            #supplierTreeView.place(relx=0.6, rely=0.15, height=(self.scrHeight/100) * 49)
-            supplierTreeView.place(relx=0.57, rely=0.1, height=(self.scrHeight/100) * 70)
-            #supplierTreeView.place(relx=0, rely=0)#height=(self.scrHeight/100) * 49)
-            #supplierTreeView.grid(row=1, column=1)
+                #supplierTreeView.place(relx=0.6, rely=0.15, height=(self.scrHeight/100) * 49)
+                supplierTreeView.place(relx=0.57, rely=0.1, height=(self.scrHeight/100) * 70)
+                #supplierTreeView.place(relx=0, rely=0)#height=(self.scrHeight/100) * 49)
+                #supplierTreeView.grid(row=1, column=1)
+            
+            else:
+
+                supplierTreeView = ttk.Treeview(master=frameCrud, columns=("id", "codigo", "nome", "contato", "endereco"), selectmode="browse", show="headings")
+                #supplierTreeView['columns']=('Rank', 'Name', 'Badge')
+                supplierTreeView.column('id',  width=round((self.scrWidth/100)*3), stretch=NO)
+                supplierTreeView.column('codigo', width=round((self.scrWidth/100)*5), anchor=CENTER)
+                supplierTreeView.column('nome', width=round((self.scrWidth/100)*15), anchor=CENTER)
+                supplierTreeView.column('contato', width=round((self.scrWidth/100)*7), anchor=CENTER)
+                supplierTreeView.column('endereco', width=round((self.scrWidth/100)*10), anchor=CENTER)
+
+                supplierTreeView.heading('id', text='ID', anchor=CENTER)
+                supplierTreeView.heading('codigo', text='Codigo', anchor=CENTER)
+                supplierTreeView.heading('nome', text='Nome', anchor=CENTER)
+                supplierTreeView.heading('contato', text='Contato', anchor=CENTER)
+                supplierTreeView.heading('endereco', text='Endereço', anchor=CENTER)
+
+                fornecedoresQueryREAD = "SELECT * FROM supplier"
+
+                self.cursor.execute(fornecedoresQueryREAD)
+
+                #lista = [["1", "Rhyan", "11985987199", "Rua belem 68 ap 13"],["2", "Rhyan", "11985987199", "Rua belem 68 ap 13"],["3", "Rhyan", "11985987199", "Rua belem 68 ap 13"]]
+                lista = self.cursor.fetchall()
+
+                for r in lista:
+                    
+                    idFornec = r[0]
+                    codFornec = r[1]
+                    nomeFornec = r[2]
+                    contFornec = r[3]
+                    emailFornec = r[4]
+                    endFornec= r[5]
+                    supplierTreeView.insert(parent='', index="end", text='', values=(idFornec, codFornec, nomeFornec, contFornec, emailFornec, endFornec))
+                    
+                    #print(lista[4])
+
+                #for (id, nome, fone, end) in lista:
+                #    supplierTreeView.insert(parent='', index="end", text='', values=(id, nome,fone, end))
+
+                # supplierTreeView.insert(parent='', index=1, iid=1, text='', values=('2','Anil','Bravo'))
+                # supplierTreeView.insert(parent='', index=2, iid=2, text='', values=('3','Vinod','Charlie'))
+                # supplierTreeView.insert(parent='', index=3, iid=3, text='', values=('4','Vimal','Delta'))
+                # supplierTreeView.insert(parent='', index=4, iid=4, text='', values=('5','Manjeet','Echo'))
+
+                #supplierTreeView.place(relx=0.6, rely=0.15, height=(self.scrHeight/100) * 49)
+                supplierTreeView.place(relx=0.57, rely=0.1, height=(self.scrHeight/100) * 70)
+                #supplierTreeView.place(relx=0, rely=0)#height=(self.scrHeight/100) * 49)
+                #supplierTreeView.grid(row=1, column=1)
 
         #FIM DA TREEVIEW
 
@@ -338,6 +405,7 @@ class Aplication():
             #btnAtualizar = ctk.CTkButton(master=self.currentFrame, text="Editar", width=(self.scrWidth/100)*17, font=(f"{self.font}", self.scrWidth/40)).place(relx=0.55, rely=0.9)
             btnDeletar = ctk.CTkButton(master=self.currentFrame, text="Excluir", command=deletar, width=(self.scrWidth/100)*17, font=(f"{self.font}", self.scrWidth/40))
             btnDeletar.place(relx=0.75, rely=0.9)
+
 
         def produtos_crud():
 

@@ -84,9 +84,13 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 create table users(userNome VARCHAR(80) NOT NULL, permissao VARCHAR(1));
-insert into users values(null, "Adm", "@Adm", 1);
-select * from users;
+insert into users values(null, "adm", "adm", 1);
 
+select * from users;
+select * from supplier;
+
+
+drop table users;
 
 
 INSERT INTO supplier VALUES(null, "1234567B", "Rhyan Lucca", "11912345678", "chicosbar@gmail.com", "Rua Belem 68 ap 13", "51067792864", NULL);
