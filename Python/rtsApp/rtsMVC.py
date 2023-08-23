@@ -9,8 +9,6 @@ from mysql.connector import Error
 app = ctk.CTk()
 
 class Models():
-    
-    query
 
     def db_connect():
         
