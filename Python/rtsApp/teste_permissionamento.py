@@ -4,6 +4,7 @@ from tkinter import ttk, messagebox
 from PIL import Image
 import mysql.connector
 from mysql.connector import Error
+import time
 
 
 app = ctk.CTk()
@@ -94,14 +95,6 @@ class Aplication():
                     tipoUser = 1
                 elif permissao == '0':
                     tipoUser = 0
-            #     if entryUser in r and entryPswd == senha:
-            #         print(f"Ok: {entryUser}, {entryPswd}")
-
-            #         global session
-            #         session = True
-            #         loginFrame.place_forget()
-
-            #         self.userPermissao = permissao
 
                 self.initial_frame()
                 self.side_menu_frame()
@@ -109,9 +102,10 @@ class Aplication():
             #         print(user)
 
             else:
-                ctk.CTkLabel(master=loginFrame, text="Usuário ou senha incorretos.", text_color="red", font=(f"{self.font}", self.scrWidth/50)).place(relx=0.1, rely=0.65)
+                ctk.CTkLabel(master=loginFrame, text="Usuário ou senha incorretos.", font=(f"{self.font}", self.scrWidth/70)).place(relx=0.1, rely=0.65,)
 
         ctk.CTkLabel(master=loginFrame, text="Usuário", font=(f"{self.font}", self.scrWidth/40)).place(relx=0.1, rely=0.1)
+
 
         userEntry= ctk.CTkEntry(master=loginFrame, placeholder_text="Insira o usuário", width=scrWidth/1.2 ,font=(f"{self.font}", self.scrWidth/40))
         userEntry.place(relx=0.1, rely=0.25)
@@ -128,42 +122,18 @@ class Aplication():
 
         imageHeight= round((self.scrHeight/100)*4)
         imageWidth=round((self.scrWidth/100)*4)
+
+        
+        shoppingImage = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\cart_light.png"), dark_image=Image.open(r"Python\rtsApp\cart_dark.png"), size=(imageHeight, imageWidth))
         stockImage = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\box_log_light.png"), dark_image=Image.open(r"Python\rtsApp\box_log_dark.png"), size=(imageHeight, imageWidth))
         cashImage = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\cash_cash_light.png"), dark_image=Image.open(r"Python\rtsApp\cash_cash_dark.png"), size=(imageHeight, imageWidth))
         analysisImage = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\anal_light.png"), dark_image=Image.open(r"Python\rtsApp\anal_dark.png"), size=(imageHeight, imageWidth))
-        usersImage =ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\user_light.png"), dark_image=Image.open(r"Python\rtsApp\user_dark.png"), size=(imageHeight, imageWidth))
+        usersImage =ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\users_light.png"), dark_image=Image.open(r"Python\rtsApp\users_dark.png"), size=(imageHeight, imageWidth))
         configImage = ctk.CTkImage(light_image=Image.open(r"Python\rtsApp\config_light.png"), dark_image=Image.open(r"Python\rtsApp\config_dark.png"), size=(imageHeight, imageWidth))
 
         frame_widget_max= self.scrWidth/ 4
         frame_wdiget_min= self.scrWidth/ 18
 
-
-        # def decrease_menu():
-        #     self.sideMenuFrame.place_forget()
-
-
-        # def increase_menu():
-
-        #     frame_widget = frame_widget_max
-        #     self.sideMenuFrame = ctk.CTkFrame(master=self.currentFrame, width=frame_widget, height=self.scrHeight, corner_radius=False)
-        #     self.sideMenuFrame.place(relx=0, rely=0, relheight=1) #, fg_color='yellow')
-        
-        #     rows = 6
-        #     self.sideMenuFrame.grid_columnconfigure(0, weight=1)
-        #     for row in range(rows):
-        #         self.sideMenuFrame.grid_rowconfigure( row, weight=1)
-
-        #     ctk.CTkLabel(master=self.sideMenuFrame, text="RTS SYSTEMS", font=(f"{self.font}", self.scrWidth/35)).place(relx=0.05, rely=0.05)    
-            
-        #     self.stockFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="RTS Estoque", command=decrease_menu, image=stockImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=1, padx=self.scrWidth/99)#.place(relx=0, rely=0.25)
-            
-        #     self.salesFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="RTS Vendas", command=decrease_menu, image=cashImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=2, padx=self.scrWidth/99)#.place(relx=0, rely=0.45)
-           
-        #     self.analysisFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="RTS Análise", command=decrease_menu, image=analysisImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=3, padx=self.scrWidth/99)#.place(relx=0, rely=0.65)
-           
-        #     self.usersFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="Usuarios", command=decrease_menu, image=usersImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=4, padx=self.scrWidth/99)
-            
-        #     self.configFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="Configurações", command=decrease_menu, image=configImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=5, padx=self.scrWidth/99)
 
         frame_widget = frame_wdiget_min
         self.sideMenuFrame = ctk.CTkFrame(master=self.currentFrame, width=frame_widget, height=self.scrHeight, corner_radius=False)
@@ -174,22 +144,31 @@ class Aplication():
         for row in range(rows):
             self.sideMenuFrame.grid_rowconfigure(row, weight=1)
 
+        if tipoUser == 1:
+            statusPermissao = "normal"
+        else:
+            statusPermissao = "disabled"
+        
+
         ctk.CTkLabel(master=self.sideMenuFrame, text="RTS", font=(f"{self.font}", self.scrWidth/30)).grid(column=0, row=1) 
 
-        self.stockFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text='', command=self.stock_frame, image=stockImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=5, padx=self.scrWidth/99)#.place(relx=0, rely=0.25)
-        ctk.CTkLabel(master=self.sideMenuFrame, text="Estoque", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=6)  
+        self.stockFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text='', command=self.stock_frame, image=shoppingImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=5, padx=self.scrWidth/99)
+        ctk.CTkLabel(master=self.sideMenuFrame, text="Compras", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=6)  
+
+        self.stockFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text='', command=self.stock_frame, image=stockImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=8, padx=self.scrWidth/99)#.place(relx=0, rely=0.25)
+        ctk.CTkLabel(master=self.sideMenuFrame, text="Estoque", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=9)  
         
-        self.salesFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="", command=self.sales_frame, image=cashImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=9, padx=self.scrWidth/99)#.place(relx=0, rely=0.45)
-        ctk.CTkLabel(master=self.sideMenuFrame, text="Vendas", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=10)  
+        self.salesFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="", command=self.sales_frame, image=cashImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=12, padx=self.scrWidth/99)#.place(relx=0, rely=0.45)
+        ctk.CTkLabel(master=self.sideMenuFrame, text="Vendas", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=13)  
         
-        self.analysisFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="", command=self.analysis_frame, image=analysisImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=13, padx=self.scrWidth/99)#.place(relx=0, rely=0.70)
-        ctk.CTkLabel(master=self.sideMenuFrame, text="Analises", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=14)  
+        self.analysisFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="", command=self.analysis_frame, image=analysisImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=16, padx=self.scrWidth/99)#.place(relx=0, rely=0.70)
+        ctk.CTkLabel(master=self.sideMenuFrame, text="Analises", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=17)  
         
-        self.usersFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="", command=self.users_frame, image=usersImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=17, padx=self.scrWidth/99)
-        ctk.CTkLabel(master=self.sideMenuFrame, text="Usuários", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=18)
+        self.usersFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="", command=self.users_frame, image=usersImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40), state=f"{statusPermissao}").grid(column=0, row=20, padx=self.scrWidth/99)
+        ctk.CTkLabel(master=self.sideMenuFrame, text="Usuários", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=21)
         
-        self.configFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="", command='increase_men', image=configImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=21, padx=self.scrWidth/99)
-        ctk.CTkLabel(master=self.sideMenuFrame, text="Config.", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=22)
+        self.configFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="", command='increase_men', image=configImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=24, padx=self.scrWidth/99)
+        ctk.CTkLabel(master=self.sideMenuFrame, text="Config.", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=25)
     
     
     def initial_frame(self):
@@ -316,7 +295,7 @@ class Aplication():
             if self.userPermissao == '1':
                 supplierTreeView = ttk.Treeview(master=frameCrud, columns=("id", "codigo", "nome", "contato", "endereco", "email", "documento", "custos"), selectmode="browse", show="headings")
                 #supplierTreeView['columns']=('Rank', 'Name', 'Badge')
-                supplierTreeView.column('id',  width=round((self.scrWidth/100)*3), stretch=NO)
+                supplierTreeView.column('id',  width=round((self.scrWidth/100)*3, ), stretch=NO)
                 supplierTreeView.column('codigo', width=round((self.scrWidth/100)*5), anchor=CENTER)
                 supplierTreeView.column('nome', width=round((self.scrWidth/100)*15), anchor=CENTER)
                 supplierTreeView.column('contato', width=round((self.scrWidth/100)*7), anchor=CENTER)
@@ -447,12 +426,14 @@ class Aplication():
             enderecoEntry = ctk.CTkEntry(master=frameCrud, placeholder_text="Endereço do fornecedor", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/40))
             enderecoEntry.place(relx=0.1, rely=0.65)
 
+
         def analEstoque_crud():
 
             frameCrud = ctk.CTkFrame(master=self.stockFrame, width=(self.scrWidth)-(self.scrWidth/100)*500, corner_radius=False, border_color="black", border_width=1)
             frameCrud.pack(fill='both', side="right", expand=True)
             self.side_menu_frame()           
             ctk.CTkLabel(master=frameCrud, text="Analisar Estoque", font=(f"{self.font}", self.scrWidth/30)).place(relx=0.1, rely=0.05)
+
 
         btnFornecedor = ctk.CTkButton(master=self.stockFrame, text="Fornecedores", command=supplier_crud, width=(self.scrWidth/100)*35, font=(f"{self.font}", self.scrWidth/30)).place(relx=0.5, rely=0.25, anchor=CENTER)
         btnProduto = ctk.CTkButton(master=self.stockFrame, text="Produtos", command=produtos_crud, width=(self.scrWidth/100)*35, font=(f"{self.font}", self.scrWidth/30)).place(relx=0.5, rely=0.45,anchor=CENTER)
@@ -498,7 +479,7 @@ class Aplication():
 
             for row in range(rows):
                 frameCrud.grid_rowconfigure(row, weight=1)
-
+    
             #Inicio do formulário 
 
             ctk.CTkLabel(master=self.currentFrame, text="Novo Usuário", font=(f"{self.font}", self.scrWidth/30)).grid(row=0, column=0)
@@ -511,21 +492,6 @@ class Aplication():
 
             confSenhaEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Confirme a Senha", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
             confSenhaEntry.grid(row=7, column=0)#.place(relx=0.1, rely=0.4)
-
-            # ContatoEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Contato do Usuário", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
-            # ContatoEntry.grid(row=4, column=0)#.place(relx=0.1, rely=0.4)
-
-            # emailEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="E-mail do Usuário", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
-            # emailEntry.grid(row=6, column=0)#.place(relx=0.1, rely=0.5)
-
-            # enderecoEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Endereço do Usuário", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
-            # enderecoEntry.grid(row=8, column=0)#.place(relx=0.1, rely=0.6)
-
-            # cpfEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="CPF do Usuário", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
-            # cpfEntry.grid(row=10, column=0)#.place(relx=0.1, rely=0.6)
-
-            # TelefoneEntry = ctk.CTkEntry(master=self.currentFrame, placeholder_text="Contato do Usuário", width=(self.scrWidth/100)*40, font=(f"{self.font}", self.scrWidth/50))
-            # TelefoneEntry.grid(row=12, column=0)#.place(relx=0.1, rely=0.6)
 
             checkVar = ctk.StringVar(value="off")
 
@@ -545,6 +511,7 @@ class Aplication():
                 else:
                     valorCheckPermissao= 0
 
+
             def gravar_registro(): 
                 check_valueAdm()
                 nome= nameEntry.get()
@@ -553,20 +520,39 @@ class Aplication():
 
                 permissao= valorCheckPermissao
 
-                if confSenha == senha:
-                    
-                    print(nome, senha, permissao)
-                    comandSQL = f"INSERT INTO users VALUES(NULL, '{nome}', '{senha}', {permissao})"
-                    print(comandSQL)
-                
+                commandVerificaSQL = f"SELECT usersNome FROM users WHERE usersNome = '{nome}';"
+                self.cursor.execute(commandVerificaSQL)
+
+                resultado = self.cursor.fetchone()
+
+                if resultado:
+                    msg = ctk.CTkLabel(master=frameCrud, text="Usuário já existe", font=(f"{self.font}", self.scrWidth/70), bg_color="#DA0000", corner_radius=50)
+                    msg.grid(row=8, column=0, ipady= (self.scrWidth/100), ipadx= (self.scrWidth/100))
                 else:
-                    ctk.CTkLabel(master=frameCrud, text="As senhas não coincidem").grid(row=8, column=0)
-                
+                    if confSenha == senha:
+                        
+                        print(nome, senha, permissao)
+                        
+                        self.db_connect()
+                        commandSQL = f"INSERT INTO RTSystems.users VALUES(NULL, '{nome}', '{senha}', {permissao});"
+                    
+                        self.cursor.execute(commandSQL)
+                        self.con.commit()
+
+                        nameEntry.delete(0, END)
+                        senhaEntry.delete(0, END)
+                        confSenhaEntry.delete(0, END)
+                        checkVar.set("off")
+
+                        msg = ctk.CTkLabel(master=frameCrud, text="Usuário adicionado com sucesso", bg_color="#00AC00", font=(f"{self.font}", self.scrWidth/70), corner_radius=50).grid(row=8, column=0, ipady= (self.scrWidth/100), ipadx= (self.scrWidth/100))
+
+                    else:
+                        msg = ctk.CTkLabel(master=frameCrud, text="As senhas não coincidem", font=(f"{self.font}", self.scrWidth/70), bg_color="#DA0000", corner_radius=50).grid(row=8, column=0, ipady= (self.scrWidth/100), ipadx= (self.scrWidth/100))
+                    
 
             checkboxPermissaoAdm = ctk.CTkCheckBox(master=frameCrud, text="Perfil Supervisor", variable=checkVar, onvalue="on", offvalue="off", command=check_valueAdm)
             # checkboxPermissaoSupervisor = ctk.CTkCheckBox(master=frameCrud, text="Perfil supervisor", variable=checkVar, onvalue="on", offvalue="off", command=check_valueAdm)
-
-            checkboxPermissaoAdm.grid(row=14, column=0)
+            checkboxPermissaoAdm.grid(row=9, column=0)
             # checkboxPermissaoSupervisor.grid(row=16, column=0)
 
             btnSalvar = ctk.CTkButton(master=self.currentFrame, text="Gravar", command=gravar_registro, width=(self.scrWidth/100)*17, font=(f"{self.font}", self.scrWidth/40))
@@ -586,9 +572,16 @@ class Aplication():
         self.side_menu_frame()
         ctk.CTkLabel(master=self.usersFrame, text="Usuários", font=(f"{self.font}", self.scrWidth/30)).place(relx=0.1, rely=0.05)
         
+
         btnNewUser = ctk.CTkButton(master=self.usersFrame, text="Novo Usuário", command=new_user, width=(self.scrWidth/100)*35, font=(f"{self.font}", self.scrWidth/30)).place(relx=0.5, rely=0.25, anchor=CENTER)
-        btnGerenciamentoUser = ctk.CTkButton(master=self.usersFrame, text="Gerenciamento", width=(self.scrWidth/100)*35, font=(f"{self.font}", self.scrWidth/30)).place(relx=0.5, rely=0.45,anchor=CENTER)
+        
+
         btnPemissoesUser = ctk.CTkButton(master=self.usersFrame, text="Permissões", width=(self.scrWidth/100)*35, font=(f"{self.font}", self.scrWidth/30)).place(relx=0.5, rely=0.65,anchor=CENTER)
+
+
+        btnGerenciamentoUser = ctk.CTkButton(master=self.usersFrame, text="Gerenciamento", width=(self.scrWidth/100)*35, font=(f"{self.font}", self.scrWidth/30)).place(relx=0.5, rely=0.45,anchor=CENTER)
+        
+        # btnPemissoesUser = ctk.CTkButton(master=self.usersFrame, text="Permissões", width=(self.scrWidth/100)*35, font=(f"{self.font}", self.scrWidth/30)).place(relx=0.5, rely=0.65,anchor=CENTER)
 
 
 Aplication()

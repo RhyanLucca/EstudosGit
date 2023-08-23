@@ -82,9 +82,10 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
-
 create table users(userNome VARCHAR(80) NOT NULL, permissao VARCHAR(1));
-insert into users values(null, "teste", "adm", 0);
+insert into users values(null, 'adm', "adm", 1);
+INSERT INTO RTSystems.users VALUES(NULL, 'Rhyan', 'rhyanlucca', 1);
+                    
 
 select * from users;
 select * from supplier;
