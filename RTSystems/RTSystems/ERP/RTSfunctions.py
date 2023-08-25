@@ -84,12 +84,9 @@ def inserirUsuario(nome, senha, permissao):
     con.commit()
 
 
-# def showMsg(text, size, width):
-
-#     currentFrame= rts.currentFrame
-
-#     msg = ctk.CTkLabel(master=currentFrame, text=text, font=(f"Arial Bold", size), width=width)
-#     msg.place(relx=0, rely=1)
-#     print("msg ok")
-
-#     print(f"msg = ctk.CTkLabel(master=, text='{text}', font=(f'Arial Bold', {size}))")
+def showMsg(text, size, width):
+    #currentFrame= rts.currentFrame
+    msg = ctk.CTkLabel(master="", text=text, font=(f"Arial Bold", size), width=width)
+    msg.place(relx=0, rely=1)
+    print("msg ok")
+    print(f"msg = ctk.CTkLabel(master=, text='{text}', font=(f'Arial Bold', {size}))")

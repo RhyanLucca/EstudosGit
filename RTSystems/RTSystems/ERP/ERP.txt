@@ -1,0 +1,89 @@
+O sistema ERP da RTSystems fornece uma ampla integração entre os setores da empresa, todos anexados e controlados jutos, para eliminar o máximo de alterações humanas e evitar possíveis erros entre elas.
+
+Modulos do sistema:
+
+    Compras
+    Vendas
+    Estoque
+    Contas a pagar
+    Contas a receber
+    Fluxo de Caixa
+    PCP Produção 
+    Contabilidade
+
+
+    Gestão de contas:
+
+        
+        O que faz? Gestão de contas a receber e de contas a pagar para conhecer o que a empresa tem para receber e o que a empresa tem para pagar.
+
+        Contas a receber:
+            
+            Função: Controlar os recebimentos e ter ações para reduzir a inadimplência
+
+            Conhecimento: 
+                Cobrança
+                Getão de inadimplência
+                Gestão de crédito
+                Técnicas de cobrança.
+                Organização e controle
+                Matemática básica
+                    Capitalização simples
+                    Capitalização Composta
+                    Percentual
+                Relatórios de contas a receber
+                Integração (Contas a receber - vendas)
+                Regime de caixa e competência
+                Sistema de informação
+                Retenções na fonte
+                Cadastro de clientes
+                Prazo médio de recebimento
+                Riscos
+
+            Ex: Emite pedido para faturar depois.
+
+            Controla todas as vendas de uma empresa que serão ou foram recebidas, tudo que está em aberto é chamado de titulo a receber.
+            um titulo caso tenha sido pago pelo cliente a vista, ou varios titulos representando as parcelas 
+            O titulo é composto por 3 informações (Nome do fornecedor, Vencimento do titulo e valor)
+
+             Listar os titulos
+            Visualizar detalhes do titulo
+            Relatório de titulos a pagar(Mostrando todos juntos em um relatório)
+            Dar baixa nos titulos
+        
+        Contas a pagar:
+
+            Função: Evitar pagamentos de mulstas, juros e duplicidade
+
+            Água,
+            Luz
+            Telefone
+            Condomínio
+            Funcionários
+            Fornecedores
+
+            Conhecimentos:
+
+            Organização e controle
+                Matemática básica
+                    Capitalização simples
+                    Capitalização Composta
+                    Percentual
+                    Equivalência de taxas
+                Relatórios de contas a pagar
+                Negociação
+                Regime de caixa e competência
+                Sistema de informação
+                Retenções na fonte
+                Analise de crédito
+                Prazo médio de pagamento
+                Riscos
+             
+            Ex: Paga em duplicidade por não guardar os comprovantes adequadamente
+            
+            Ao ser realizada uma compra, o fornecedor emite uma nota fiscal a qual a empresa inputa dentro do sistema, após a inclusão da nota fiscal é gerado um "Titulo a pagar", caso gerado uma parcela é cadastrado uma parcela, caso gerado mais parcelas serão geradas n parcelas para serem pagas, o titulo é composto por 3 informações (Nome do fornecedor, Vencimento do titulo e valor)
+
+            Listar os titulos
+            Visualizar detalhes do titulo
+            Relatório de titulos a pagar(Mostrando todos juntos em um relatório)
+            Dar baixa nos titulos
