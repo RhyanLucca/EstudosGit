@@ -19,7 +19,6 @@ git add "Nome do arquivo"/ Envia os arquvios para um modo de stage(Preparado par
     ou
 git add . / Envia todos os arquivos disponiveis para o repositório
 
-
 git status/ Mostra todas as mudanças a serem "Commitadas"
 
 git commit - m "Titulo do commit"/ Commita as informações para o repositório 
