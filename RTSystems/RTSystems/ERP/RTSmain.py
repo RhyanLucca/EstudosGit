@@ -26,7 +26,7 @@ class Aplication():
         self.app.attributes("-fullscreen", True)
 
         #self.app.geometry("700x700")
-       # ctk.set_appearance_mode("light")
+        #ctk.set_appearance_mode("light")
         self.app.title("RTS Systems")
         self.db = rts.db_connect()
         #self.showMsg = rts.showMsg()
@@ -172,7 +172,10 @@ class Aplication():
         self.configFrameButton = ctk.CTkButton(master=self.sideMenuFrame, text="", command='increase_men', image=configImage, compound=LEFT, width=frame_widget, corner_radius=False, fg_color="transparent", font=(f"{self.font}", self.scrWidth/40)).grid(column=0, row=24, padx=self.scrWidth/99)
         ctk.CTkLabel(master=self.sideMenuFrame, text="Config.", font=(f"{self.font}", self.scrWidth/70)).grid(column=0, row=25)
     
-    
+
+    #def upper_menu(self):
+
+
     def initial_frame(self):
 
         if tipoUser == 1:

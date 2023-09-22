@@ -1,0 +1,203 @@
+#1 Criar uma virtualenv 
+    Baixar o Django na virtualenv
+    pip freeze > requirements.txt
+
+#2 Criando um projeto django e conhecendo sua estrutura
+
+    django-admin startproject "nome" . {ponto final cria o projeto na mesma pasta, sem criar um subdiretorio}
+
+        Manage.py - {ultilitario de linha de comando que interage com o projeto django de diversas maneiras}
+
+        init.py {Arquivo que diz ao python que o diretório deve ser tratado como um pacote}
+
+        asgi.py {integração de servidores web que utiliza comunicação assincrona }
+
+        settings.py {arquivo de configurações do projeto, onde descrevemos e detalhamos como o projeto funciona e quais definições estão disponisveis}
+
+        urls.py {arquivo de url, onde armazena-se as urls para o projeto}
+
+        wsgi.py {integração de servidores web que implementa o padrão wsgi (Utilizado em deploy)}
+
+        ##################################################################################
+            python manage.py runserver {Executa o servidor do projeto e permite acessa-lo} 
+        ##################################################################################
+
+#3 Criando uma aplicação django e conhecendo sua estrutura
+
+    OBS: Para cada aplicação criada é necessario instalar a pasta do app como um aplicativo em setting.py installed apps dentro do projeto
+
+    python manage.py startapp "Nome do app" 
+
+        >Migrations {Responsavel por armazenar migrations de banco de dados, mantem histórico de banco de dados}
+            init.py {Arquivo que diz ao python que o diretório deve ser tratado como um pacote}
+        
+        init.py {Arquivo que diz ao python que o diretório deve ser tratado como um pacote}
+
+        admin.py {Adiciona os models para que reflita na area administrativa do django}
+
+        apps.py {Armazena o nome da aplicação}
+
+        models.py {Onde são criados e gerenciados os modelos de dados, classes de persistencia dentro do banco de dados utilizado no projeto
+            Representação exata do banco de dados onde as classes são tabelas e seus atributos são os campos das tabelas. 
+            Essa camada guarda as informações disponibilizadas para outras camadas da aplicação.
+
+            #Avisar o Django sobre alguma alteração dos modelos no banco de dados
+            python manage.py makemigrations usuarios
+
+            #Rodar as migrações de forma automática, sincronizando o banco com as informações na camada de modelo
+            python manage.py migrate
+
+            #Criar um super usuario para poder fazer as primeiras informações do site
+            python manage.py createsuperuser
+        }
+
+        tests.py {criar testes para a aplicação}
+
+        views.py: {Funções que serão chamadas nas rotas para então abrir os templates para visualização
+            responsável por encapsular a lógica que recebe e responde as requisições dos usuarios e pode ou não definir comportamentos especificos como buscar informações no banco de dados. Toda view é uma função de retorno vinculada a uma url configurada no arquivo de urls, sendo assim não existe uma url sem um retorno de view}
+
+#4 Padrão MTV Django
+
+    Models {Gerencia os modelos de dados}
+
+    Views {Controla os acessos entre models e templates, controlando o acesso pelas urls}
+
+    Templates {Retorna os templates para o usuário}
+
+#5 Configurações do Django e arquivo settings.py
+
+    Settings.py
+
+        INSTALLED_APPS = 
+            Contrib admin {Aplicação que armazena os códigos da área administrativa}
+            contrib auth {Aplicação que armazena os códigos que permitem a autenticação de usuários}
+            Contrib ContentTypes {Aplicação que permite apresentar diferentes tipos de conteudo}
+            contrib sessions {Cria e gerencia sessões de usuários}
+            contrib messages {Troca de mensagens entre as aplicações}
+            contrib staticfiles {Permite usar arquivos estaticos}
+    
+
+        DEBUG {Estado de debug da aplicação}
+
+        ALLOWED_HOSTS = [HOSTS PERMITIDOS PARA ACESSAR A PÁGINA]
+
+        TEMPLATES = [Armazena a pasta de templates da aplicação]
+
+        LANGUAGE_CODE = {Contem as informações de linguagem do projeto Django} 'pt-br'
+
+#6 Views do Django e arquivo views.py
+    
+    As aplicações contém as views para que o MTV do Django funcione
+
+    As views sempre serão retronadas na aplicação, que através de um método com uma variaável request, retorna a renderização passando um template html. 
+    
+    Em conexão com as rotas (URLS) contidas dentro do projeto, que carregam as views
+
+    "def index(request):
+        return render(request, 'index.html')"
+
+#7 Rotas no Django e arquivo urls.py
+
+    No arquivo de urls é necessário importar as views das aplicações criadas e inserir no campo urlpatterns a url que será digitada para retornar as views
+
+    ############################################################################
+        from {app.views} import {Nome dos métodos que retornam as views} EX: Index
+        
+        urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('', index)
+        ]
+    ############################################################################ 
+
+
+    Uma convenção em Django é sobre não inserir todas as rotas no arquivo de rotas (urls.py)
+    
+
+    ##################################################################################################################################
+     
+        from django.urls import path, {include}
+
+        urlpatterns = [
+        path('admin/', admin.site.urls),
+        {path('', include('{aplicação}.urls')), {Para isso é necessário criar um arquivos de urls dentro da aplicação que será indicada}}
+        ]
+
+    ##################################################################################################################################
+        urls.py APLICAÇÃO 
+
+            from django.urls import path
+            from .views import index, contato
+
+            urlpatterns = [
+                path('', index),
+                path('contato', contato),
+            ]
+    ##################################################################################################################################
+
+#8 Templates no Django
+
+    Para carregar os templates é necessario inserir um diretorio de templates no arquivo settings.py do projeto
+
+    É ideal inserir um diretório de templates para cada aplicação, pois cada uma terá seu diretório de templates definido baseado nos métodos das Views
+
+    Dentro da pasta de templates serão armazenados os arquivos html da aplicação
+
+    para definir uma variavel dentro de um template é necessário inseri-lo dentro da view, e para retornar suas opções basta inserir seu nome no template dentro de chaves duplas {{ Valor variavel }}
+
+#9 Models Django e o arquivo models.py
+
+    Model é um modelo de dados que cria a estrutura de tabelas e faz um mapeamento dos módulos com o banco de dados e permite utilizar o banco de dados como se fosse objetos Python.
+
+    É necessário criar classes para os objetos, que herdam do módulo MODELS a classe MODEL {models.Model}
+
+    é possivel inserir campos e definir os tipos de campos que eles representarão
+
+    #################################
+        class Produto(models.model):
+            nome = models.CharField('Nome', max_length=100) {CHARFIELD REPRESENTA OS VALORES DE STRING}
+            preco = models.DecimalField('Preço', decimal_places=2, max_digits=9) {DECIMALFIELD É USADO PARA NUMEROS DECIMAIS} 
+            estoque = models.IntegerField('Quantidade em Estoque') {INTEGERFIELD REPRESENTA OS NUMEROS INTEIROS}
+    
+            def __str__(self):
+                #return f"{self.nome},  {self.preco}"
+                return self.nome
+
+            {Retorna os valores selecionados no template da área administrativa do django}
+
+    ##################################
+
+    Necessário garantir que o aplicativo que contém os models esteja instalado em settings.py
+
+    ##############################################
+    python manage.py makemigrations {Lê as aplicações configuradas no arquivo settings.py
+                                    Cria um arquivo de migrations que é responsável pelas 
+                                    migrações dos modelos de dados para o banco definido em 
+                                    settings.py DATABASES}
+
+    python manage.py migrate {Executa as migrações "Commit"}
+    
+    ##############################################
+
+#10 A Área administrativa dos projetos Django e o arquivo admin.py
+
+    python manage.py createsuperuser {Comando para criar super usuários e liberar acesso a área administrativa}
+
+    Admin.py É necessário importar e regitrar os models no arquivo admin.py para que os models criados na application retornem na área administrativa do projeto por aplicação 
+
+    Comando para registro de models na area administrativa
+    ################################
+
+    class ProdutoAdmin(admin.ModelAdmin):
+        list_display = ('nome', "preco", 'estoque') 
+        {Comando que define as colunas de visualização que irão aparecer na visualização}
+
+    class ClienteAdmin(admin.ModelAdmin):
+        list_display = ('nome', 'sobrenome', "email")
+        {Comando que define as colunas de visualização que irão aparecer na visualização}
+
+    admin.site.register(Produto, ProdutoAdmin) {Registra as informações e as colunas que irão aparecer na tela administrativa}
+    admin.site.register(Cliente, ClienteAdmin) {Registra as informações e as colunas que irão aparecer na tela administrativa}
+
+    ################################
+
+#11 Django Shell

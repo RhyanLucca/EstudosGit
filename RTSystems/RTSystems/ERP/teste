@@ -1,0 +1,77 @@
+import customtkinter as ctk
+from tkinter import *
+from tkinter import ttk, messagebox
+from PIL import Image
+import RTSfunctions as rts
+import time
+#import mysql.connector
+#from mysql.connector import Error
+
+app = ctk.CTk()
+currentFrame= ""
+
+class Aplication():
+
+    def __init__(self):
+        self.app=app
+        self.font = "Arial Bold"
+        self.main_window()
+        self.geral_frame()
+        self.initial_frame()
+        self.app.mainloop()
+
+    def main_window(self):
+
+        self.app.attributes("-fullscreen", True)
+        #self.app.geometry("700x700")
+       # ctk.set_appearance_mode("light")
+        self.app.title("RTS Systems")
+        self.db = rts.db_connect()
+        #self.showMsg = rts.showMsg()
+        self.msgSize = self.app.winfo_screenwidth()
+        self.msgTextSize = round((self.msgSize / 70))
+        print(self.msgTextSize)
+
+    def geral_frame(self):
+        self.geralFrame = ctk.CTkFrame(master=self.app, corner_radius=False) #, fg_color="red")
+        self.geralFrame.pack(fill="both", side="left", expand=True)
+
+        self.geralFrame.grid_columnconfigure(0, weight=1)
+        self.geralFrame.grid_columnconfigure(1, weight=2)
+        self.geralFrame.grid_columnconfigure(2, weight=1)
+
+        self.scrWidth= self.app.winfo_screenwidth()
+        self.scrHeight = self.app.winfo_screenheight()
+
+
+    def initial_frame(self):
+
+        self.initialFrame = ctk.CTkFrame(master=self.geralFrame, width=self.scrWidth, corner_radius=False, border_color="black", border_width=1)
+        self.initialFrame.pack(fill='both', side="right", expand=True)
+        self.currentFrame = self.initialFrame
+        #self.side_menu_frame()
+      
+        # ctk.CTkLabel(master=self.initialFrame, text="Bem vindo", font=(f"{self.font}", self.scrWidth/30)).place(relx=0.1, rely=0.05)
+        ctk.CTkLabel(master=self.initialFrame, text="Bem vindo", font=(f"{self.font}", self.scrWidth/30)).grid(row=0, column=0)
+
+        ctk.CTkLabel(self.initialFrame, text="TEste").grid(row=2, column=0)
+        ctk.CTkLabel(self.initialFrame, text="TEste").grid(row=3, column=0)
+        ctk.CTkLabel(self.initialFrame, text="TEste").grid(row=4, column=0)
+        ctk.CTkLabel(self.initialFrame, text="TEste").grid(row=5, column=0)
+        ctk.CTkLabel(self.initialFrame, text="TEste").grid(row=6, column=0)
+        ctk.CTkLabel(self.initialFrame, text="TEste").grid(row=7, column=0)
+
+        testeEntry= ctk.CTkEntry(self.initialFrame, width=300).grid(row=2, column=2, columnspan=2)
+    
+
+        self.currentFrame = self.initialFrame
+        
+        rows = 9
+        columns = 9
+
+        for row in range(rows):
+            self.currentFrame.grid_rowconfigure(row, weight=1)
+        for column in range(columns):
+            self.currentFrame.grid_columnconfigure(column, weight=1)
+
+Aplication()

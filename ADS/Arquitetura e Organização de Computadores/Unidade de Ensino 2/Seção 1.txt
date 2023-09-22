@@ -1,0 +1,92 @@
+Unidade 2
+
+-Processadores
+    Conceitos
+    Evolução
+    Diferentes Tipos
+    Funcionamento
+
+    Unidade central de processamento (CPU)
+
+    Unidade Lógica e aritmética (ULA)
+
+    Unidade de controle
+
+    Barramentos
+
+    Tecnologias empregadas 
+        CISC (COMPLEX INSTRUCTION SET COMPUTERS)
+        RISC (REDUCED INSTRUCTION COMPUTERS)
+
+Memória
+    Evolução
+    Tipos
+    Funcionamento
+    Memória Principal
+        Memória Cache
+        Memória RAM
+        Memória ROM
+        Memória Volátil e não volátil
+    
+    Memória Secundária
+        Padrões para transferencia de dados
+
+Dispositivos de entrada e saída
+    Barramentos
+    Barramentos de dados
+    Barramentos de endereço
+    Barramentos de controle
+
+#######################################################################################################################################################
+
+Processadores:
+
+    Unidade de controle(CPU)
+
+        O processador traz em seu interior a Unidade Central de Processamento – CPU. Esta CPU é formada de algumas unidades que têm suas funções definidas para proporcionar o processamento de informações no computador. A CPU possui uma ULA – Unidade Lógica e Aritmética – e uma unidade de controle. Cada uma destas unidades tem sua função no processamento e controle das demais unidades do computador.
+        A Unidade Lógica e Aritmética (ULA) é responsável por executar os cálculos matemáticos utilizados para processar os dados dentro do computador. Os dados usados para estes cálculos são armazenados na memória do computador, e que serão estudadas mais à frente nesta unidade e o caminho para que esta informação seja conduzida entre a ULA da CPU e a memória é chamado de barramento
+
+        A CPU de um computador é composta por vários elementos e pode ser dividida em duas categorias funcionais, a Unidade Funcional de Controle e Unidade Funcional de Processamento.
+
+        a Unidade Funcional de Processamento é composta pelos registradores, ACC e ULA, e a Unidade Funcional de Controle é composta pelos elementos: RDM, REM, CI, RI, Decodificador de Instruções, UC e Clock (relógio) (FÁVERO, 2011).
+
+        Um ponto importante que merece ser destacado é a velocidade com que a CPU trabalha, medida por ciclos de clock. Ciclo de clock é o tempo gasto pelo processador para executar uma operação ou para transferir um dado entre ele e a memória e que define sua velocidade. Este tempo é medido em Hertz, ou seja, quantos ciclos são processados por segundo. Os processadores atuais trabalham com velocidades na casa dos Gigahertz.
+
+        Já a unidade de controle de um processador tem a função de coordenar e direcionar as principais funções de um computador, visto que o processador enviará e receberá os dados para as memórias. 
+        É a responsável por toda a ordenação de dados de um computador e até pelo funcionamento do próprio computador, pois coordena a ULA, os registradores que controlam as memórias, os barramentos internos que se comunicam com elas e todo o funcionamento da placa-mãe, além de interligar os dispositivos.
+
+        Os barramentos são as vias por onde passam os dados e permitem a transmissão de informações entre a CPU, os dispositivos de entrada e saída de dados e as unidades de memória. Além desta função, eles exercem um papel importante na capacidade e velocidade do processamento em um computador.
+
+        A quantidade de bits de um processador representa a quantidade de informação que pode ser processada de cada vez, enquanto a quantidade de bits de um barramento define quanto de dados pode ser mandado ou recebido entre o processador e a memória no momento de seu processamento.
+        
+        Os primeiros microcomputadores foram lançados na década de 70, tinham processadores com tecnologia de 8 bits e seu barramento com 8 bits, que era o caso do então processador 8080. Após estes primeiros modelos foram lançados processadores com 16 bits de processamento interno e barramento e, na sequência, os processadores de 32 bits, os de 64 bits e, ainda mais recentemente, os processadores passaram a contar também com a possibilidade de terem mais que um núcleo de processamento, como é o exemplo dos processadores Multicore, dos quais fazem parte os modernos i3, i5, i7, entre outros.
+
+    
+    Barramentos
+
+        - Barramento de dados
+        Este barramento interliga a CPU à memória, e vice-versa, para a transferência das informações que serão processadas. Ele determina diretamente o desempenho do sistema, pois quanto maior o número de vias de comunicação, maior o número de bits transferidos e, consequentemente, maior a rapidez com que estes dados serão processados. Os primeiros PCs possuíam barramento de 8 vias. Atualmente, dependendo do processador, este número de vias pode ser de 32, 64 e até de 128 vias (FÁVERO, 2011)
+
+        - Barramento de endereços
+        Interliga a CPU à memória fazendo seu endereçamento e tem o número de vias correspondente à tecnologia de bits do processador, ou seja, nos computadores mais modernos, 32 bits ou 64 bits e conforme já visto por você, permitindo endereçar até 4 GB (Gigabytes) de memória em processadores 32 bits e cerca de 16 PB (Petabytes), no caso de processadores de 64 bits (SOUZA FILHO, 2014)
+
+        - Barramento de controle
+        Interliga na CPU à Unidade de Controle aos componentes e dispositivos de um computador, componentes de entrada e saída, memórias auxiliares e de armazenamento, entre outros. Por trabalhar com componetes externos ao processador, pode ser chamado também de barramento externo (MONTEIRO, 2007)
+
+
+
+    Segundo Monteiro (2007), o que define um projeto de um processador é a quantidade de instruções de máquina que se deseja que ele, processador, execute, quanto menor este conjunto de instruções, mais rápido se torna um processador. Partindo deste princípio, os processadores têm dois tipos de arquiteturas empregadas pelos seus fabricantes
+
+    Processador CISC
+        - A arquitetura CISC (Complex Instruction Set Computers) – Sistema com um conjunto de instruções complexo,atualmente utilizado pelos processadores de computadores pessoais;
+
+        Os processadores com tecnologia CISC são capazes de processar centenas de conjuntos complexos de instruções simples. Isto significa que cada instrução isoladamente é considerada simples, curta e pouco potente, porém várias destas instruções agrupadas formam um conjunto complexo que é executado pelo processador. 
+        Inicialmente, existia uma grande tendência a esta tecnologia de processadores, porém havia algumas desvantagens, como o desempenho reduzido justamente pelo excesso de instruções executadas pelo processador e pela velocidade de processamento ter que ser elevada para que o desempenho fosse melhorado. A ideia dos fabricantes era produzir processadores cada vez mais potentes baseados na complexidade destes conjuntos de instruções (BROOKSHEAR, 2013). 
+
+    Processador RISC
+
+        - A arquitetura RISC (Reduced Instuction Set Computes) – Sistema com um conjunto de instruções reduzido, que é empregado nos processadores ARM utilizados pelos smartphones e tablets atuais (MONTEIRO, 2007). Estas instruções servem para que o processador execute suas funções, como operações aritméticas, endereçamento de memória, controle de dispositivos e outros (FÁVERO, 2011)
+
+        Os processadores com tecnologia RISC têm um conjunto reduzido de instruções, e diferente da tecnologia CISC, estas instruções são consideradas complexas, pois cada uma delas executa várias tarefas conjuntas. Isto permite uma vantagem dos processadores RISC em relação aos processadores CISC, que por ter um número menor de instruções tem menos circuitos internos e assim podem trabalhar com frequências muito maiores sem ter problemas de superaquecimento dos processadores (BROOKSHEAR, 2013)
+
+    
