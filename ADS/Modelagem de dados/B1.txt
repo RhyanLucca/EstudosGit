@@ -1,0 +1,48 @@
+O que significa a sigla SGBD?
+    Sistema gerenciador de banco de dados
+
+Qual a função principal de um SGBD em relação a dados?
+    Gerenciar, armazenar e recuperar dados de forma eficiente
+
+Sobre o conceito de atomicidade em um SEGBD, qual das seguintes afirmações é verdadeira?
+    atomicidade impede que multiplas transações sejam executadas ao mesmo tempo, garantindo a consistência dos dados
+
+Qual é a importancia do conceito de atomicidade em um SGBD?
+    Manter a consistencia dos dados, permitindo que uma transação seja tratada como uma unidade indivisível
+
+Qual é um exemplo de SGBD amplamente usado em ambientes empresariais, conhecido por sua escalabilidade e desempenho? 
+    Redis
+
+O que são requisitos não funcionais em um projeto de banco de dados?
+    Requisitos relacionados à funcionalidade do banco de dados, como consultas, inserções e atualizações
+
+Qual a importancia dos recursos não funcionais em um projeto de bancode dados?
+    Eles definem as características de desempenho, segurança e usabilidade do banco de dados.
+
+Qual é o principal conceito por trás da modelagem de dados relacional?
+    A modelagemrelacional é baseada na representação de dados em tabelas ou entidades com relações definidas entre elas.
+
+Na modelagem de dados relacional, o que representa uma tabela?
+    Uma tabela representa uma entidade ou tipo de objeto no mundo real, como um cliente ou um produto.
+
+Qual é uma das principais responsabilidades de um DBA em relação à segurança de um banco de dados?
+    Implementar políticas de backup.
+
+Qual das seguintes afirmações descreve corretamente uma das funções do administrador de banco de dados(DBA)?
+    Administrar e manter o desempenho, segurança e integridade de um banco de dados.
+
+O que são requisitos de escalabilidade em um banco de dados?
+    Requisitos que definem como banco de dados deve lidar com um aumento no volume de dados ou tráfego
+
+Quando se trata de requisitos de banco de dados, o que é um "índice"?
+    Um índice é uma estrutura de dados que melhora o desempenho das consultas ao acelerar a recuperação de registros.
+
+O que um DBA geralmente faz para otimizar o desempenho de um banco de dados?
+    Sintoniza consultas SQL, ajusta índices e otimiza configurações de hardware.
+
+Qual a importancia do backup e recuperação de dados nas responsabilidades de um DBA?
+    É fundamental para garantir que os dados possam ser restaurados em caso de falhas ou perda de dados.
+
+Além das tarefas técnicas, qual é outra responsabilidade comum de um DBA?
+    Colaborar com os desenvolvedores de software para garantir que as necessidades do banco de dados sejam atendidas.
+
