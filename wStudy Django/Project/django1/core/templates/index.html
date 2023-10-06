@@ -1,3 +1,4 @@
+{% load static %} <!-- Informa o código que serão importados os arquivos estaticos-->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,17 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django 1 - Index</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}" > <!--Importação de estilos pela variavel STATIC em settings.py-->
 </head>
 <body>
     
     <h1>Index</h1>
 
+    <img src="{% static 'images/djangoLogo.png' %}"/>
+
     <h2>{{ curso }}</h2>
+
     <h3>{{ outros }}</h3>
 
-    <select name="teste" id="teste">
-        <option value="">{{lista}}</option>
-    </select>
+    <span>{{ logado }}</span>
+
+    <table style="border: 1px solid; padding: 5px;">
+
+        <thead style="border: 1px solid; padding: 5px;">
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <!-- <th>Estoque</th> -->
+            </tr>
+        </thead>
+        <tbody></tbody>
+            {% for produto in produtos %}
+                <tr style="border: 1px solid; padding: 5px;">
+                    <td style="border: 1px solid; padding: 5px;"><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
+                    <td style="border: 1px solid; padding: 5px;">{{ produto.preco }}</td>
+                    <!-- <td style="border: 1px solid;">{{ produto.estoque }}</td> -->
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <button onclick="teste();">Clique-me</button>
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>

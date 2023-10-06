@@ -1,0 +1,9 @@
+body{
+    background-color:#341256;
+    color: hsl(0, 0%, 100%);
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}

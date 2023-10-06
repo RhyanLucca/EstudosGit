@@ -1,0 +1,14 @@
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\bin\Debug\net6.0\MinhaAplicacao.exe
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\bin\Debug\net6.0\MinhaAplicacao.deps.json
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\bin\Debug\net6.0\MinhaAplicacao.runtimeconfig.json
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\bin\Debug\net6.0\MinhaAplicacao.dll
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\bin\Debug\net6.0\MinhaAplicacao.pdb
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\net6.0\MinhaAplicacao.GeneratedMSBuildEditorConfig.editorconfig
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\net6.0\MinhaAplicacao.AssemblyInfoInputs.cache
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\net6.0\MinhaAplicacao.AssemblyInfo.cs
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\net6.0\MinhaAplicacao.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\net6.0\MinhaAplicacao.dll
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\net6.0\refint\MinhaAplicacao.dll
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\net6.0\MinhaAplicacao.pdb
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\net6.0\MinhaAplicacao.genruntimeconfig.cache
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\net6.0\ref\MinhaAplicacao.dll

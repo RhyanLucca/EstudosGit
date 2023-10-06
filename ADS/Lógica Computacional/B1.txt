@@ -1,0 +1,88 @@
+Conceitos da lógica computacional
+
+Proposição: consiste em um enunciado, frase declarativa.
+
+Premissas: consiste em proposições que são utilizadas como base para um raciocínio. Pode se dizer que são as proposições do silogismo.
+
+Argumento: Conjunto de enunciados que se relacionam uns com os outros.
+
+Lógica formal: 
+	A logica é dita formal quando analisa e representaa forma de qualquer argumento para que possa ser considerado válido para alguma conclusão
+	
+	Para entender a lógica formal e como formamos nosso raciocínio é importante ter em mente alguns concieots. Uma proposição é um pensamento em forma de frase declarativa.Essa proposição pode ser verdadeira ou false. A lógica não permite concluir se uma proposição ou afirmação é verdadeira ou falsa, ela apenas garante que, com base em premissas verdadeiras, seja possivel chegar em conclusões verdadeiras.
+
+Lógica transcendental:
+	É desenvolvida por toda a obra do filosofo Immanuel Kant
+
+	Nesse livro, kant discute que nosso conhecimento, o humano, parte de duas fontes principais
+
+		A primeira se trata da receptividade das impressões por meio de nossos sentidos.
+
+		A segunda fonte é relativa à faculdade de conhecer um objetos por representações mentais , a partir de pensamentos
+
+Lógica dedutiva
+
+	É aquela que parte de premissar afirmativas ou leis mais gerais permitindo a obtenção de verades menos gerai ou particulares. Exemplo de inferência e dedutiva ou dedução.
+
+	Todo Analista de sistemas sabe programar
+	Mariana é analista de sistemas
+	Portanto Mariana sabe programar
+
+Principios da Lógica clássica:
+	
+	O da identidade A é A
+	
+	O da não contradição é impossivel A é A e não A ao mesmo tempo
+
+	O do terceiro excluido A é X ou não-x, não há terceira possibilidade
+
+Os três maiores expoentes desse periodo foram 
+
+	Geroge Boole Criador da algebra booleana
+
+	George Cantor Idealizador da teoria dos conjuntos
+	Contem os simbolos De (União U) e (Intersecção V){U invertindo}
+
+Os principais conectivos operações logicas fundamentais são representados pelos seguintes simbolos
+
+	~ Til - Corresponde a negação
+	^ Cunha - Corresponde a operação de conjunção. Em programação And ou E ou &&
+	v letra v - corresponde a operação de disjunção. em programação OR, ou ou ||
+	-> Corresponde a operação condicional equivale a "Se... Então"
+	<-> Opreação bi ondicional - equivale a "se...E..Somente.se"
+
+
+Uma lista é uma sequencia ordenada de objetos
+	
+	Costumamaos representar uma lista abnrindo parenteses e apresentando cada elemento da lista separando-os por virgula
+	
+	A lista (1,2,3,4) não é a mesma que (4,3,2,1)
+
+	Uma lista pode conter elementos repetidos como (3,4,5,5,6)
+
+	Em uma lista chamamso de comprimeto ao numero de elementos que a compõe
+	
+	Quando a lista tem apenas dois elementos ela recebe o nome de par ordenado
+
+	e uma lista vazia é uma lista cujo comprimeito é igual a zero
+
+	Outro tipo de lista são listas de dois elementos em que há N escolhas para o primeiro elemento e, para cada uma dessas escolhas, há m escolhas do segundoe elementos.
+
+	Então o numero de tais listas é N x M
+
+Fatorial
+
+	Por definição considera-se que o fatorial do numero 1!=1 e 0!=1
+
+	5! = 5.4.3.2.1 = 120
+
+Arranjos
+
+	uma lista de 5 numeros tomados de 2 a dois
+	
+	An,p = n!/(n-p)! = 4!/(4-2)! = 4.3.2.1/(2.1) = 24/2 = 12
+
+
+
+
+

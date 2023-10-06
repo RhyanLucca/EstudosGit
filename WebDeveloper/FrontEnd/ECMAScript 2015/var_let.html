@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        //3 escopos: global, função e bloco
+
+        var serie = "Friends" //Global
+
+        function x(){ //Escopo de função
+            
+            var serie = "Game Of Thrones"
+
+            console.log('Função: ' + serie)
+
+            if(true){ //Escopo de bloco
+                console.log('Bloco dentro da função: ' + serie)
+            }
+        }
+
+        x()
+
+        if(true){ //Escopo de bloco
+
+            console.log('Global: ' + serie) 
+
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="output"></div>
+
+</body>
+</html>

@@ -201,3 +201,73 @@
     ################################
 
 #11 Django Shell
+
+    python manage.py {Retorna todo os comandos disponiveis do arquivo manage}
+
+    python manage.py shell {Carregará um console python}
+
+    from app.models import Classe
+
+    dir(Classe) {Permite acesso aos atributos da classe}
+
+    from app.views import view
+    dir(view) 
+
+    produto = produto(nome="Atari", preco=199.67, estoque=100) {Comando para inserção de dados pelo django shell}
+    produto.save() {Comando que salva a execução}
+
+    produto.id/pk {retorna os valores do id e da primary key dos dados aplicados}
+    
+    dir(produto.objects)
+
+    dir(produto.objects.get(id=1))
+
+    produto = Produto.objects.all() {Retorna todos os objetos do produto selecionado}
+    produto {Print}
+
+    produtos = Produto.objects.count() {Conta quantos produtos existem registrados}
+
+    Produto.objects.first() Retorna o primeiro valor registrado
+    Produto.objects.last() Retorna o Ultimo valor registrado
+
+    Produto.objects.filter(id=1)  {Retorna o valor de produtos baseado no filtro aplicado}
+
+    cliente.campo = "Novo valor" {Realizar alteração no registro ativo}
+
+    cliente.delete() {Exclui o registro ativo}
+
+#12 Apresentando dados do banco de dados no template
+
+    No arquivo de views é necessario importar o model que será retornado
+
+    #####################################################################
+    from .models import Produto
+
+    def index(request):
+        produtos = Produto.object.all()
+
+        context= {
+            'curso' : 'Programação web com Django Framework',
+            'outros' : 'Django é massa!',
+            'logado' : teste,
+            'produtos' : produtos
+        }
+
+        return render(request, 'index.html', context,)
+    #####################################################################
+
+    Após isso ele pode ser retornado no back end como um valor dentro de dos arquivos HTML
+        
+
+
+#13 Arquivos estáticaos no Django: CSS, Javascript, Imagens
+
+    Encontrado no final do arquivo settings.py
+    
+    Django espera que em cada aplicação, seja encontrado um diretório com o nome static que conterá os arquivos estáticos como CSS, JS e Imagens
+
+    {% load static %} <!--Informa o código que serão importados os arquivos estaticos, necessariio sem inserido no inicio do código-->
+
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> <!--Importação de estilos pela variavel STATIC em settings.py-->
+
+    python manage.py collectstaticfiles {Coleta os arquivos estaticos e envia para o repositorio criado em settings.py}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Produto</h1>
+
+    <table style="border: 1px solid;">
+
+        <thead style="border: 1px solid;">
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+                <tr style="border: 1px solid;">
+                    <td style="border: 1px solid;"><a href="{% url 'index' %}">{{ produto.nome }}</a></td>
+                    <td style="border: 1px solid;">{{ produto.preco }}</td>
+                    <td style="border: 1px solid;">{{ produto.estoque }}</td>
+                </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
