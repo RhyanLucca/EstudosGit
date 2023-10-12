@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        class Animal{
+            constructor(cor, peso, tamanho){
+                this.cor = cor
+                this.peso = peso
+                this.tamanho = tamanho
+            }
+
+            dormir(){
+                console.log('dormir')
+            }
+        }
+
+        class Passaro extends Animal{ //cria relação de herança com a classe animal
+            constructor(bico, cor, peso, tamanho){
+                super(cor, tamanho, peso) //super é um atributo necessário para retornar a herança do metodo constructor do objeto pai
+                this.bico = bico
+            }
+            voar(){
+                console.log('voar')
+            }
+        }
+
+        class Papagaio extends Passaro{ //Se uma classe for extendida a classe herda em cascata
+            constructor(sabeFalar, cor, tamanho, peso){
+                super("medio", cor, tamanho, peso) //super é um atributo necessário para retornar a herança do metodo constructor do objeto pai
+                this.sabefalar = true
+            }
+            falar(){
+                console.log("Falar")
+            }
+        }
+
+        let papagaio = new Papagaio(true, "verde", 25, 350)
+        console.log(papagaio)
+
+        let papagaio2 = new Papagaio(false, "rosa", 10, 80)
+        console.log(papagaio2) 
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="output"></div>
+
+</body>
+</html>

@@ -9,7 +9,7 @@
     <script>
 
         //3 escopos: global, função e bloco
-
+        //Declarar variaveis com VAR permite o hoisting(Içamento para o escopo o escopo de cima)
         var serie = "Friends" //Global
 
         function x(){ //Escopo de função
@@ -22,16 +22,20 @@
                 console.log('Bloco dentro da função: ' + serie)
             }
         }
-
+        
         x()
 
         if(true){ //Escopo de bloco
-
             console.log('Global: ' + serie) 
-
         }
 
 
+        //Declarar variaveis com LET não permite o hoisting
+        if(true){
+            let serie2 = "Friends"
+            console.log("Let: " + serie2)
+        }
+        console.log("Let: " + serie2)
 
     </script>
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        //Constantes são valores que não mudam de valor conforme o andamento do código
+
+        const SERIE = "Friends"
+
+        //A diferença de escopo não é um problema para um constante, permitindo ter duas constantes com o mesmo nome em escopos diferentes
+
+        function x(){
+            const SERIE = "The Walking Dead"
+            console.log("Escopo de Função: "+SERIE)
+        }
+        console.log("Escopo Global: "+SERIE) //Escopo Global
+        x() //Escopo de Função
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="output"></div>
+
+</body>
+</html>

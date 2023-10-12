@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        class Animal{
+            constructor(){
+                this.cor = ''
+                this.tamanho = null
+                this.peso = null
+            }
+
+            dormir(){
+                console.log('dormir')
+            }
+        }
+
+        class Cachorro extends Animal{ //cria relação de herança com a classe animal
+            constructor(){
+                super() //super é um atributo necessário para retornar a herança do metodo constructor do objeto pai
+                this.orelhas = 'grandes e caidas'
+            }
+            correr(){
+                console.log('correr')
+            }
+            rosnar(){
+                console.log('rosnar')
+            }
+        }
+
+        class Passaro extends Animal{ //cria relação de herança com a classe animal
+            constructor(){
+                super() //super é um atributo necessário para retornar a herança do metodo constructor do objeto pai
+                this.bico = 'curto'
+            }
+            voar(){
+                console.log('voar')
+            }
+        }
+
+        class Papagaio extends Passaro{ //Se uma classe for extendida a classe herda em cascata
+            constructor(){
+                super() //super é um atributo necessário para retornar a herança do metodo constructor do objeto pai //super é um atributo necessário para retornar a herança do metodo constructor do objeto pai
+                this.sabefalar = true
+            }
+
+            falar(){
+                console.log("Falar")
+            }
+        }
+
+        let cachorro = new Cachorro()
+        let passaro = new Passaro()
+        let papagaio = new Papagaio()
+        // papagaio.falar()
+        // papagaio.voar()
+        // papagaio.dormir()
+        // cachorro.dormir()
+        // passaro.dormir()
+        console.log(cachorro)
+        console.log(passaro)
+        console.log(papagaio)
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="output"></div>
+
+</body>
+</html>

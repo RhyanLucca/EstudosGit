@@ -22,20 +22,30 @@
             }
             
             //Para criar os métodos não é necessário usar function
-            depositar(){
-
+            depositar(valorDeposito) {
+                this.saldo += valorDeposito
             }
 
-            sacar(){
-
+            sacar(valorSaque){
+                this.saldo -= valorSaque
             }
 
             consultarSaldo(){
-
+                return this.saldo
             }
 
         }
 
+        //new transforma o modelo em um objeto
+
+        let x = new ContaBancaria()
+        let y = new ContaBancaria()
+
+        console.log(x.consultarSaldo())
+        x.depositar(450)
+        console.log(x.consultarSaldo())
+        x.sacar(200)
+        console.log(x.consultarSaldo())
 
     </script>
 

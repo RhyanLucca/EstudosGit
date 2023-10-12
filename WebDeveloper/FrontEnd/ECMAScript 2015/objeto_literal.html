@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        class Produto{
+            constructor(descricao, preco){
+                this.descricao = descricao
+                this.preco = preco
+            }
+
+            verDescricao(){
+                console.log(`${this.descricao} por apenas: ${this.preco}`)
+            }
+        }
+
+        //------------------------------------------------------------------
+        //São usados para objetos unicos num projeto, que não são necessarios criar uma classe
+
+        let produto = new Produto("Notebook", 2200)
+        // console.log(produto)
+        produto.verDescricao()
+
+        let produtoLiteral = {
+            descricao:"Geladeira",
+            preco:5000,
+            verDescricao: function(){
+                console.log(`${this.descricao} por apenas: ${this.preco}`)
+            }
+        }
+
+        produtoLiteral.verDescricao()
+
+        // //----------------------------------------
+        // formulario -> servidor
+        //     recuperar dados e monta um objeto literal
+        //         obj Literal -> JSON - > Http -> Server -> Armazena
+
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="output"></div>
+
+</body>
+</html>

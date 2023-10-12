@@ -1,0 +1,57 @@
+Full Stack Developer
+FRONT-END
+    HTML5
+        Estrutura
+        Elementos
+        Atributos
+        Tabelas
+        Formulários
+        Adicionar Estilos
+        DOM
+    CSS
+        Seletores
+        Propriedades
+        Estilos
+        Box Models
+        Flexbox
+        Grid
+        Layouts Responsivos
+        Tailwind
+        Bootstrap
+    JAVASCRIPT
+        Variáveis
+        Funções
+        Objetos
+        Arrays
+        Conditions
+        Loops
+        Operadores
+
+        ReactJS
+        AngularJS
+        VueJS
+        SPAS 
+    DESIGN RESPONSIVE
+    Controle de Versão GIT
+
+BACKEND
+        NODEJS
+        PYTHON
+        RUBY
+        PHP
+        C#
+        MYSQL
+        MONGODB
+
+    Testes e Deployment
+    WEB APIS
+        Canva APIS
+        Geo Location APIS
+        Speech Recognition
+        Audio e Video
+    Web Performance
+    Ferramentas
+        CMS
+        E-COMMERCE
+    I.A
+        GitHub Copilot

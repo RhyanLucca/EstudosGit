@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        //arrow functions são muito usadas para diminuir a verbosidade do código
+
+        let parOuImpar = numero => numero % 2 === 0 ? 'Par' : 'Ímpar' //Return Implicito if ternario
+
+        // let parOuImpar = numero => {
+        //     if(numero%2 === 0){
+        //         return "Par"
+        //     }else{
+        //         return "Ímpar"
+        //     }
+        // }
+  
+        // let parOuImpar = function(numero){
+        //     if(numero%2 === 0){
+        //         return "par"
+        //     }else{
+        //         return "ímpar"
+        //     }
+        // }
+        
+        document.write(parOuImpar(11))
+    
+
+        // let quadrado = function(x = 0){ //Função anonima
+        //     return x * x
+        // }
+
+    
+    //Arrow function
+        // let quadrados = (x) => {
+        //     return x * x
+        // }
+
+    //Em casos de um parametro só pode-se omitir os parenteses
+        // let quadrado = x =>{
+        //     return x * x
+        // }
+
+    //Se não houver parametro algum ou mais de um parametro é necessario o uso de parenteses
+        // let quadrado = () =>{
+        //         return x * x
+        //     }
+
+        // let quadrado = (x, y) =>{
+        //     return x * y
+        // }
+
+    //Se a função for apenas um simples retorno não é necessario abrir um bloco de lógica
+            
+        //let quadrado = x => x * x //Return Implícito
+
+        // document.write(quadrado(3))
+
+
+    
+
+    </script>
+
+</head>
+<body>
+    
+
+
+</body>
+</html>

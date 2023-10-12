@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function contarUmaHistoria(personagem = "Fubá",atividade = "correr no parque",dono="Rhyan"){ //Se o paramentro não for enviado a informação sera default
+            document.write(`Era uma vez um cachorro chamado ${personagem},ele adorava ${atividade}, seu dono era ${dono}, e eles viveram felizes para sempre`)
+        }
+
+        contarUmaHistoria() //Retorna o valor default
+        document.write("<br>")
+        contarUmaHistoria('Repolho', undefined, 'Lucca')
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="output"></div>
+
+</body>
+</html>
