@@ -1,0 +1,10 @@
+C:\inetpub\wwwroot\Development\C#\meuSistema\bin\Debug\meuSistema.exe.config
+C:\inetpub\wwwroot\Development\C#\meuSistema\bin\Debug\meuSistema.exe
+C:\inetpub\wwwroot\Development\C#\meuSistema\bin\Debug\meuSistema.pdb
+C:\inetpub\wwwroot\Development\C#\meuSistema\obj\Debug\meuSistema.csproj.AssemblyReference.cache
+C:\inetpub\wwwroot\Development\C#\meuSistema\obj\Debug\meuSistema.Form1.resources
+C:\inetpub\wwwroot\Development\C#\meuSistema\obj\Debug\meuSistema.Properties.Resources.resources
+C:\inetpub\wwwroot\Development\C#\meuSistema\obj\Debug\meuSistema.csproj.GenerateResource.cache
+C:\inetpub\wwwroot\Development\C#\meuSistema\obj\Debug\meuSistema.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\Development\C#\meuSistema\obj\Debug\meuSistema.exe
+C:\inetpub\wwwroot\Development\C#\meuSistema\obj\Debug\meuSistema.pdb

@@ -1,3 +1,12 @@
+<!--#include file="functions.asp"-->
+<!-- #include file="connection.asp" -->
+
+<%
+
+call open_connection
+Response.CharSet = "UTF-8"
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,15 +28,20 @@
             border: 1px solid red;
         }
 
+        .full-right{
+            justify-content: space-between;
+        }
+
 /* Start Nav Div */
 
         .nav{
             background-color: #000000;
             display: flex;
             height: 70px;
-            /* align-items: center; */
             color: #fff;
             list-style-type:none;
+            min-width: 100%;
+            position: fixed;
         }
 
         .nav a{
@@ -74,13 +88,16 @@
 /* Start Filter Div */
 
         .filter-body{
+            
             border: 1px solid black;
             padding: 10px;
             width: 80%;
             margin: 10px auto;
+            margin-top: 100px;
             border-radius: 0.5rem;
             box-shadow: 3px 3px 3px black;
             justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         .submitFormFilter{
@@ -99,14 +116,17 @@
 
         .publications-container{
             display: flex;
-            float: left;
-            /* justify-content: space-around; */
+            /* float: left; */
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* align-items: left; */
         }
 
         .publication-body{
             cursor: pointer;
-            min-width: 29%;
-            max-width: 29%;
+            min-width: 300px;
+            width: 350px;
+            max-width: 450px;
             margin: 1%;
             padding: 1%;
             min-height: 240px;
@@ -114,6 +134,7 @@
             border: 1px solid black;
             border-radius: 0.5rem;
             box-shadow: 3px 3px 3px black;
+            
         }
 
         .publication-title{
@@ -129,12 +150,15 @@
             min-height: 110px;
             max-height: 110px;
             padding: 1%;
+            align-items: center;
         }
 
         .publication-bonus{
             min-height: 5%;
             max-height: 5%;
             padding: 1%;
+            display: flex;
+            justify-content: space-between;
         }
 
     </style>
@@ -144,7 +168,7 @@
     
     <div class="nav">
         <div class="nav-logo">
-            <a href="#" class="#">RTSystems</a>
+            <a href="#" class="#"><span style="color: red;">RTS</span>YSTEMS</a>
         </div>
         <ul class="nav-list">
             <li><a href="#" class="nav-tab">Home</a></li>
@@ -204,125 +228,45 @@
         
         <h1 style="font-size: 3rem;">Eventos Disponíveis</h1>
         
-        <hr>
-
-        
+        <hr> 
 
         <div class="publications-container">
 
-            <div class="publication-body">
+            <% 
+
+            Set rset1 = Server.CreateObject("ADODB.Recordset")
+
+            rset1.open "SELECT * FROM tabeventos", conexao1
+
+            'Set rset1 = conDB.execute(strSQL)
+
+            Do Until rset1.EOF
+
+            %>
+            
+            <div class='publication-body' data-id='<%=rset1("cadID")%>'>
                 
                 <div class="publication-title">
-                    <h1>Balada Osasco</h1>
+                    <h1><%=rset1("cadNome")%></h1>
                     <br>
                     <h4>18:00 às 02:00h</h4>
                 </div>
                 <hr>
                 <div class="publication-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quaerat ab itaque voluptatum delectus libero natus? Labore quod deserunt illo atque adipisci sapiente omnis temporibus reprehenderit placeat voluptatum. Excepturi, illo!</p>
+                    <p><%=rset1("cadDescricao")%></p>
                 </div>
                 <hr>
                 <div class="publication-bonus">
-                    <h4>R$: 150,00</h4>
+                    <h4>R$: <%=rset1("cadPagamento")%></h4>
+                    <h4 class="full-right">Número de vagas: <%=rset1("cadNumVagas")%></h4>
                 </div>
 
             </div>
 
-            <div class="publication-body">
-                
-                <div class="publication-title">
-                    <h1>Balada São Paulo</h1>
-                    <br>
-                    <h4>18:00 às 04:00h</h4>
-                </div>
-                <hr>
-                <div class="publication-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quaerat ab itaque voluptatum delectus libero natus? Labore quod deserunt illo atque adipisci sapiente omnis temporibus reprehenderit placeat voluptatum. Excepturi, illo!</p>
-                </div>
-                <hr>
-                <div class="publication-bonus">
-                    <h4>R$: 200,00</h4>
-                </div>
-
-            </div>
-
-            <div class="publication-body">
-                
-                <div class="publication-title">
-                    <h1>Restaurante São Paulo</h1>
-                    <br>
-                    <h4>10:00 às 22:00h</h4>
-                </div>
-                <hr>
-                <div class="publication-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quaerat ab itaque voluptatum delectus libero natus? Labore quod deserunt illo atque adipisci sapiente omnis temporibus reprehenderit placeat voluptatum. Excepturi, illo!</p>
-                </div>
-                <hr>
-                <div class="publication-bonus">
-                    <h4>R$: 130,00 | Refeição no local</h4>
-                </div>
-
-            </div>
-
-        </div>
-        
-        <div class="publications-container">
-            <div class="publication-body">
-                
-                <div class="publication-title">
-                    <h1>Balada São Paulo</h1>
-                    <br>
-                    <h4>18:00 às 04:00h</h4>
-                </div>
-                <hr>
-                <div class="publication-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quaerat ab itaque voluptatum delectus libero natus? Labore quod deserunt illo atque adipisci sapiente omnis temporibus reprehenderit placeat voluptatum. Excepturi, illo!</p>
-                </div>
-                <hr>
-                <div class="publication-bonus">
-                    <h4>R$: 200,00</h4>
-                </div>
-
-            </div>
-
-            <div class="publication-body">
-                
-                <div class="publication-title">
-                    <h1>Balada Osasco</h1>
-                    <br>
-                    <h4>18:00 às 02:00h</h4>
-                </div>
-                <hr>
-                <div class="publication-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quaerat ab itaque voluptatum delectus libero natus? Labore quod deserunt illo atque adipisci sapiente omnis temporibus reprehenderit placeat voluptatum. Excepturi, illo!</p>
-                </div>
-                <hr>
-                <div class="publication-bonus">
-                    <h4>R$: 150,00</h4>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="publications-container">
-            <div class="publication-body">
-                
-                <div class="publication-title">
-                    <h1>Balada São Paulo</h1>
-                    <br>
-                    <h4>18:00 às 04:00h</h4>
-                </div>
-                <hr>
-                <div class="publication-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quaerat ab itaque voluptatum delectus libero natus? Labore quod deserunt illo atque adipisci sapiente omnis temporibus reprehenderit placeat voluptatum. Excepturi, illo!</p>
-                </div>
-                <hr>
-                <div class="publication-bonus">
-                    <h4>R$: 200,00</h4>
-                </div>
-
-            </div>
+            <%
+                rset1.MoveNext 
+            Loop
+            %>
 
         </div>
 
@@ -330,3 +274,10 @@
 
 </body>
 </html>
+
+
+<%
+
+call end_connection
+
+%>

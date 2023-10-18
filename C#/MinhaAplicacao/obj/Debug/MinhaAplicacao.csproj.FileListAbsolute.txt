@@ -1,0 +1,7 @@
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\bin\Debug\MinhaAplicacao.exe.config
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\bin\Debug\MinhaAplicacao.exe
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\bin\Debug\MinhaAplicacao.pdb
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\MinhaAplicacao.csproj.AssemblyReference.cache
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\MinhaAplicacao.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\MinhaAplicacao.exe
+C:\inetpub\wwwroot\Development\C#\MinhaAplicacao\obj\Debug\MinhaAplicacao.pdb
